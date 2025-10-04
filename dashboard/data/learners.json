@@ -1,0 +1,389 @@
+{
+  "alex_student": {
+    "user_id": "alex_student",
+    "name": "Alex Student",
+    "age": 14,
+    "grade_level": "Grade 8",
+    "learning_style": "visual",
+    "multiple_intelligences": [
+      "logical_mathematical",
+      "spatial"
+    ],
+    "interests": [
+      "robotics",
+      "environmental science",
+      "programming"
+    ],
+    "current_level": 5,
+    "streak_days": 7,
+    "completed_projects": 15,
+    "preferred_frameworks": [
+      "NGSS",
+      "ISTE",
+      "PBL"
+    ],
+    "accessibility_needs": [],
+    "language_preference": "en",
+    "timezone": "UTC",
+    "learning_goals": [
+      "Master Python programming for data analysis",
+      "Build advanced robotics projects",
+      "Understand environmental sustainability solutions",
+      "Develop presentation and communication skills"
+    ],
+    "created_at": "2024-09-01T00:00:00",
+    "last_active": "2024-10-04T12:00:00"
+  },
+  "maya_explorer": {
+    "user_id": "maya_explorer",
+    "name": "Maya Explorer",
+    "age": 12,
+    "grade_level": "Grade 6",
+    "learning_style": "kinesthetic",
+    "multiple_intelligences": [
+      "bodily_kinesthetic",
+      "naturalistic",
+      "spatial"
+    ],
+    "interests": [
+      "animals",
+      "building",
+      "outdoor exploration",
+      "art"
+    ],
+    "current_level": 3,
+    "streak_days": 4,
+    "completed_projects": 8,
+    "preferred_frameworks": [
+      "PBL",
+      "STEAM",
+      "Multiple Intelligence"
+    ],
+    "accessibility_needs": [],
+    "language_preference": "en",
+    "timezone": "UTC",
+    "learning_goals": [
+      "Learn about animal habitats and conservation",
+      "Build robots that help animals",
+      "Create art that tells environmental stories",
+      "Work with others on fun projects"
+    ],
+    "created_at": "2024-08-15T00:00:00",
+    "last_active": "2024-10-04T10:30:00"
+  },
+  "sam_innovator": {
+    "user_id": "sam_innovator",
+    "name": "Sam Innovator",
+    "age": 16,
+    "grade_level": "Grade 10",
+    "learning_style": "multimodal",
+    "multiple_intelligences": [
+      "logical_mathematical",
+      "linguistic",
+      "interpersonal"
+    ],
+    "interests": [
+      "artificial intelligence",
+      "social justice",
+      "writing",
+      "leadership"
+    ],
+    "current_level": 7,
+    "streak_days": 12,
+    "completed_projects": 23,
+    "preferred_frameworks": [
+      "OECD",
+      "DIGICOMP",
+      "NCF",
+      "ISTE"
+    ],
+    "accessibility_needs": [],
+    "language_preference": "en",
+    "timezone": "UTC",
+    "learning_goals": [
+      "Develop AI solutions for social good",
+      "Lead collaborative projects with impact",
+      "Communicate complex ideas effectively",
+      "Prepare for university computer science"
+    ],
+    "created_at": "2024-07-01T00:00:00",
+    "last_active": "2024-10-04T14:15:00"
+  },
+  "5e96908e-73cb-4caa-a876-dd216f424e55": {
+    "user_id": "5e96908e-73cb-4caa-a876-dd216f424e55",
+    "name": "Test Learner",
+    "age": 13,
+    "grade_level": "Grade 7",
+    "learning_style": "LearningStyle.VISUAL",
+    "multiple_intelligences": [
+      "MultipleIntelligence.LOGICAL_MATHEMATICAL"
+    ],
+    "interests": [
+      "robotics"
+    ],
+    "current_level": 1,
+    "streak_days": 0,
+    "completed_projects": 0,
+    "preferred_frameworks": [],
+    "accessibility_needs": [],
+    "language_preference": "en",
+    "timezone": "UTC",
+    "learning_goals": [
+      "Learn programming"
+    ],
+    "created_at": "2025-10-04 19:26:30.785177",
+    "last_active": "2025-10-04 19:26:30.785179"
+  },
+  "cfd1cd21-7f6d-4f3e-b74e-6a082504436e": {
+    "user_id": "cfd1cd21-7f6d-4f3e-b74e-6a082504436e",
+    "name": "STEAM Explorer",
+    "age": 14,
+    "grade_level": "Grade 8",
+    "learning_style": "LearningStyle.MULTIMODAL",
+    "multiple_intelligences": [
+      "MultipleIntelligence.LOGICAL_MATHEMATICAL",
+      "MultipleIntelligence.SPATIAL",
+      "MultipleIntelligence.NATURALISTIC"
+    ],
+    "interests": [
+      "robotics",
+      "environmental science",
+      "programming"
+    ],
+    "current_level": 1,
+    "streak_days": 0,
+    "completed_projects": 0,
+    "preferred_frameworks": [],
+    "accessibility_needs": [],
+    "language_preference": "en",
+    "timezone": "UTC",
+    "learning_goals": [
+      "Create sustainable solutions",
+      "Learn robotics",
+      "Master programming"
+    ],
+    "created_at": "2025-10-04 19:33:00.940321",
+    "last_active": "2025-10-04 19:33:00.940323"
+  },
+  "239988da-c2ca-4ef5-8d2e-ce5f6efebd3a": {
+    "user_id": "239988da-c2ca-4ef5-8d2e-ce5f6efebd3a",
+    "name": "Maya STEAM Pioneer",
+    "age": 13,
+    "grade_level": "Grade 7",
+    "learning_style": "LearningStyle.KINESTHETIC",
+    "multiple_intelligences": [
+      "MultipleIntelligence.BODILY_KINESTHETIC",
+      "MultipleIntelligence.NATURALISTIC",
+      "MultipleIntelligence.INTERPERSONAL"
+    ],
+    "interests": [
+      "robotics",
+      "environmental conservation",
+      "team projects",
+      "building"
+    ],
+    "current_level": 1,
+    "streak_days": 0,
+    "completed_projects": 0,
+    "preferred_frameworks": [],
+    "accessibility_needs": [],
+    "language_preference": "en",
+    "timezone": "UTC",
+    "learning_goals": [
+      "Create robots to help animals",
+      "Learn about renewable energy",
+      "Work on team projects",
+      "Build sustainable solutions"
+    ],
+    "created_at": "2025-10-04 19:34:03.942007",
+    "last_active": "2025-10-04 19:34:03.942012"
+  },
+  "87e28ca5-998e-4e46-9776-d3cb00550291": {
+    "user_id": "87e28ca5-998e-4e46-9776-d3cb00550291",
+    "name": "Alex Environmental Scientist",
+    "age": 14,
+    "grade_level": "Grade 8",
+    "learning_style": "LearningStyle.VISUAL",
+    "multiple_intelligences": [
+      "MultipleIntelligence.LOGICAL_MATHEMATICAL",
+      "MultipleIntelligence.NATURALISTIC"
+    ],
+    "interests": [
+      "environmental science",
+      "data analysis",
+      "climate change"
+    ],
+    "current_level": 1,
+    "streak_days": 0,
+    "completed_projects": 0,
+    "preferred_frameworks": [],
+    "accessibility_needs": [],
+    "language_preference": "en",
+    "timezone": "UTC",
+    "learning_goals": [
+      "Understand climate science",
+      "Create data visualizations",
+      "Develop environmental solutions"
+    ],
+    "created_at": "2025-10-04 19:35:33.804414",
+    "last_active": "2025-10-04 19:35:33.804417"
+  },
+  "5ad2ed6c-b329-491f-b00f-60e9072adc36": {
+    "user_id": "5ad2ed6c-b329-491f-b00f-60e9072adc36",
+    "name": "Maya Robotics Builder",
+    "age": 12,
+    "grade_level": "Grade 6",
+    "learning_style": "LearningStyle.KINESTHETIC",
+    "multiple_intelligences": [
+      "MultipleIntelligence.BODILY_KINESTHETIC",
+      "MultipleIntelligence.SPATIAL"
+    ],
+    "interests": [
+      "robotics",
+      "building",
+      "animals",
+      "helping others"
+    ],
+    "current_level": 1,
+    "streak_days": 0,
+    "completed_projects": 0,
+    "preferred_frameworks": [],
+    "accessibility_needs": [],
+    "language_preference": "en",
+    "timezone": "UTC",
+    "learning_goals": [
+      "Build helpful robots",
+      "Learn programming",
+      "Help animals with technology"
+    ],
+    "created_at": "2025-10-04 19:35:33.806348",
+    "last_active": "2025-10-04 19:35:33.806350"
+  },
+  "95428849-ec14-450f-bd9c-abce5d433612": {
+    "user_id": "95428849-ec14-450f-bd9c-abce5d433612",
+    "name": "Sam AI Innovator",
+    "age": 16,
+    "grade_level": "Grade 10",
+    "learning_style": "LearningStyle.MULTIMODAL",
+    "multiple_intelligences": [
+      "MultipleIntelligence.LOGICAL_MATHEMATICAL",
+      "MultipleIntelligence.INTERPERSONAL"
+    ],
+    "interests": [
+      "artificial intelligence",
+      "social justice",
+      "programming",
+      "leadership"
+    ],
+    "current_level": 1,
+    "streak_days": 0,
+    "completed_projects": 0,
+    "preferred_frameworks": [],
+    "accessibility_needs": [],
+    "language_preference": "en",
+    "timezone": "UTC",
+    "learning_goals": [
+      "Develop AI for social good",
+      "Lead impactful projects",
+      "Prepare for university research"
+    ],
+    "created_at": "2025-10-04 19:35:33.808152",
+    "last_active": "2025-10-04 19:35:33.808153"
+  },
+  "a555e576-1f29-45ff-b777-7871f5ca96fd": {
+    "user_id": "a555e576-1f29-45ff-b777-7871f5ca96fd",
+    "name": "STEAM Champion",
+    "age": 13,
+    "grade_level": "Grade 7",
+    "learning_style": "LearningStyle.MULTIMODAL",
+    "multiple_intelligences": [
+      "MultipleIntelligence.LOGICAL_MATHEMATICAL",
+      "MultipleIntelligence.SPATIAL",
+      "MultipleIntelligence.NATURALISTIC",
+      "MultipleIntelligence.INTERPERSONAL"
+    ],
+    "interests": [
+      "robotics",
+      "environmental science",
+      "programming",
+      "teamwork",
+      "innovation"
+    ],
+    "current_level": 1,
+    "streak_days": 0,
+    "completed_projects": 0,
+    "preferred_frameworks": [],
+    "accessibility_needs": [],
+    "language_preference": "en",
+    "timezone": "UTC",
+    "learning_goals": [
+      "Create robots to solve environmental problems",
+      "Master Python programming",
+      "Lead collaborative STEAM projects",
+      "Develop solutions for real-world challenges"
+    ],
+    "created_at": "2025-10-04 19:39:59.262629",
+    "last_active": "2025-10-04 19:39:59.262632"
+  },
+  "8deb3dbb-29b8-4e6c-b1cb-e30fddb6ab7a": {
+    "user_id": "8deb3dbb-29b8-4e6c-b1cb-e30fddb6ab7a",
+    "name": "Future STEAM Innovator",
+    "age": 13,
+    "grade_level": "Grade 7",
+    "learning_style": "LearningStyle.MULTIMODAL",
+    "multiple_intelligences": [
+      "MultipleIntelligence.LOGICAL_MATHEMATICAL",
+      "MultipleIntelligence.SPATIAL",
+      "MultipleIntelligence.NATURALISTIC"
+    ],
+    "interests": [
+      "robotics",
+      "environmental sustainability",
+      "programming"
+    ],
+    "current_level": 1,
+    "streak_days": 0,
+    "completed_projects": 0,
+    "preferred_frameworks": [],
+    "accessibility_needs": [],
+    "language_preference": "en",
+    "timezone": "UTC",
+    "learning_goals": [
+      "Build eco-friendly robots",
+      "Master Python programming",
+      "Create environmental solutions"
+    ],
+    "created_at": "2025-10-04 19:40:53.243728",
+    "last_active": "2025-10-04 19:40:53.243731"
+  },
+  "c348044e-8a65-4059-8aee-6269e314441d": {
+    "user_id": "c348044e-8a65-4059-8aee-6269e314441d",
+    "name": "Alex STEAM Explorer",
+    "age": 14,
+    "grade_level": "Grade 8",
+    "learning_style": "LearningStyle.VISUAL",
+    "multiple_intelligences": [
+      "MultipleIntelligence.LOGICAL_MATHEMATICAL",
+      "MultipleIntelligence.NATURALISTIC"
+    ],
+    "interests": [
+      "environmental science",
+      "robotics",
+      "programming"
+    ],
+    "current_level": 1,
+    "streak_days": 0,
+    "completed_projects": 0,
+    "preferred_frameworks": [],
+    "accessibility_needs": [],
+    "language_preference": "en",
+    "timezone": "UTC",
+    "learning_goals": [
+      "Save the environment",
+      "Build cool robots",
+      "Learn programming"
+    ],
+    "created_at": "2025-10-04 19:42:53.091532",
+    "last_active": "2025-10-04 19:42:53.091535"
+  }
+}

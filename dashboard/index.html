@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEAM Learning Platform - Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-graduation-cap brand-icon"></i>
+                <span class="brand-name">STEAM Learning</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#dashboard" class="nav-link active">
+                    <i class="fas fa-home"></i> Dashboard
+                </a>
+                <a href="#projects" class="nav-link">
+                    <i class="fas fa-project-diagram"></i> Projects
+                </a>
+                <a href="#robotics" class="nav-link">
+                    <i class="fas fa-robot"></i> Robotics
+                </a>
+                <a href="#coding" class="nav-link">
+                    <i class="fas fa-code"></i> Coding
+                </a>
+                <a href="#library" class="nav-link">
+                    <i class="fas fa-book"></i> Library
+                </a>
+            </div>
+            <div class="user-menu">
+                <div class="user-profile">
+                    <img src="https://via.placeholder.com/40" alt="User" class="profile-img">
+                    <span class="user-name">Alex Student</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Dashboard -->
+    <main class="dashboard">
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <div class="welcome-content">
+                <h1 class="welcome-title">Welcome to Your STEAM Journey! 🚀</h1>
+                <p class="welcome-subtitle">
+                    Explore interdisciplinary projects, build with robotics, code solutions, and discover the exciting world of Science, Technology, Engineering, Arts, and Mathematics.
+                </p>
+            </div>
+            <div class="welcome-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number">15</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number">7</span>
+                        <span class="stat-label">Day Streak</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number">Level 5</span>
+                        <span class="stat-label">STEAM Explorer</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Chat Interface -->
+        <section class="chat-section">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <div class="chat-title">
+                        <i class="fas fa-robot chat-icon"></i>
+                        <span>STEAM AI Assistant</span>
+                    </div>
+                    <div class="chat-actions">
+                        <button class="btn-icon" title="Clear Chat">
+                            <i class="fas fa-broom"></i>
+                        </button>
+                        <button class="btn-icon" title="Settings">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message assistant-message">
+                        <div class="message-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="message-content">
+                            <p>Hi! I'm your STEAM AI Assistant. I can help you:</p>
+                            <ul>
+                                <li>🎯 Create personalized learning paths</li>
+                                <li>🔬 Design interdisciplinary projects</li>
+                                <li>🤖 Build robotics experiments</li>
+                                <li>💻 Generate Python coding challenges</li>
+                                <li>📚 Find appropriate resources for your level</li>
+                            </ul>
+                            <p>What would you like to explore today?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-input-container">
+                    <div class="quick-actions">
+                        <button class="quick-action-btn" data-action="project">
+                            <i class="fas fa-lightbulb"></i>
+                            Create Project
+                        </button>
+                        <button class="quick-action-btn" data-action="robotics">
+                            <i class="fas fa-robot"></i>
+                            Robotics Lab
+                        </button>
+                        <button class="quick-action-btn" data-action="coding">
+                            <i class="fas fa-code"></i>
+                            Code Challenge
+                        </button>
+                        <button class="quick-action-btn" data-action="lesson">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            Lesson Plan
+                        </button>
+                    </div>
+                    
+                    <div class="input-container">
+                        <input type="text" 
+                               id="chatInput" 
+                               placeholder="Ask me anything about STEAM learning..." 
+                               class="chat-input">
+                        <button id="sendBtn" class="send-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Paths Section -->
+        <section class="learning-paths">
+            <div class="section-header">
+                <h2 class="section-title">Your Learning Paths</h2>
+                <button class="btn-primary">
+                    <i class="fas fa-plus"></i> Create New Path
+                </button>
+            </div>
+            
+            <div class="paths-grid">
+                <div class="path-card active">
+                    <div class="path-header">
+                        <div class="path-icon">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <div class="path-status">
+                            <span class="status-badge in-progress">In Progress</span>
+                        </div>
+                    </div>
+                    <h3 class="path-title">Water Sustainability Challenge</h3>
+                    <p class="path-description">Design a water filtration system using engineering principles and environmental science.</p>
+                    <div class="path-frameworks">
+                        <span class="framework-tag">NGSS</span>
+                        <span class="framework-tag">ISTE</span>
+                        <span class="framework-tag">PBL</span>
+                    </div>
+                    <div class="path-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%"></div>
+                        </div>
+                        <span class="progress-text">65% Complete</span>
+                    </div>
+                    <div class="path-actions">
+                        <button class="btn-secondary">Continue</button>
+                        <button class="btn-icon">
+                            <i class="fas fa-share"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="path-card">
+                    <div class="path-header">
+                        <div class="path-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="path-status">
+                            <span class="status-badge completed">Completed</span>
+                        </div>
+                    </div>
+                    <h3 class="path-title">Mars Rover Mission</h3>
+                    <p class="path-description">Build and program a Mars rover using robotics and physics principles.</p>
+                    <div class="path-frameworks">
+                        <span class="framework-tag">OECD</span>
+                        <span class="framework-tag">DIGICOMP</span>
+                        <span class="framework-tag">NCF</span>
+                    </div>
+                    <div class="path-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill completed" style="width: 100%"></div>
+                        </div>
+                        <span class="progress-text">100% Complete</span>
+                    </div>
+                    <div class="path-actions">
+                        <button class="btn-secondary">View Results</button>
+                        <button class="btn-icon">
+                            <i class="fas fa-certificate"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="path-card">
+                    <div class="path-header">
+                        <div class="path-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <div class="path-status">
+                            <span class="status-badge suggested">Suggested</span>
+                        </div>
+                    </div>
+                    <h3 class="path-title">Smart Garden Ecosystem</h3>
+                    <p class="path-description">Create an automated garden system combining IoT, biology, and data analysis.</p>
+                    <div class="path-frameworks">
+                        <span class="framework-tag">STEAM</span>
+                        <span class="framework-tag">Multiple Intelligence</span>
+                        <span class="framework-tag">Learning Styles</span>
+                    </div>
+                    <div class="path-difficulty">
+                        <span class="difficulty-badge intermediate">Intermediate</span>
+                    </div>
+                    <div class="path-actions">
+                        <button class="btn-primary">Start Path</button>
+                        <button class="btn-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Access Tools -->
+        <section class="tools-section">
+            <div class="section-header">
+                <h2 class="section-title">Quick Access Tools</h2>
+            </div>
+            
+            <div class="tools-grid">
+                <div class="tool-card" data-tool="project-generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3 class="tool-title">Project Generator</h3>
+                    <p class="tool-description">AI-powered project creation based on your interests and learning goals.</p>
+                    <button class="tool-btn">Launch</button>
+                </div>
+
+                <div class="tool-card" data-tool="robotics-lab">
+                    <div class="tool-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="tool-title">Robotics Lab</h3>
+                    <p class="tool-description">Virtual and physical robotics experiments with Modi kit integration.</p>
+                    <button class="tool-btn">Launch</button>
+                </div>
+
+                <div class="tool-card" data-tool="code-playground">
+                    <div class="tool-icon">
+                        <i class="fas fa-terminal"></i>
+                    </div>
+                    <h3 class="tool-title">Code Playground</h3>
+                    <p class="tool-description">Interactive Python coding environment with STEAM project integration.</p>
+                    <button class="tool-btn">Launch</button>
+                </div>
+
+                <div class="tool-card" data-tool="lesson-planner">
+                    <div class="tool-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3 class="tool-title">Lesson Planner</h3>
+                    <p class="tool-description">Generate detailed lesson plans aligned with multiple educational frameworks.</p>
+                    <button class="tool-btn">Launch</button>
+                </div>
+
+                <div class="tool-card" data-tool="assessment-center">
+                    <div class="tool-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="tool-title">Assessment Center</h3>
+                    <p class="tool-description">Track progress, analyze learning patterns, and get personalized recommendations.</p>
+                    <button class="tool-btn">Launch</button>
+                </div>
+
+                <div class="tool-card" data-tool="resource-library">
+                    <div class="tool-icon">
+                        <i class="fas fa-library"></i>
+                    </div>
+                    <h3 class="tool-title">Resource Library</h3>
+                    <p class="tool-description">Access curated educational content from multiple sources and frameworks.</p>
+                    <button class="tool-btn">Launch</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Activity -->
+        <section class="activity-section">
+            <div class="section-header">
+                <h2 class="section-title">Recent Activity</h2>
+                <a href="#" class="view-all-link">View All</a>
+            </div>
+            
+            <div class="activity-feed">
+                <div class="activity-item">
+                    <div class="activity-icon completed">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h4 class="activity-title">Completed Python Challenge: Data Visualization</h4>
+                        <p class="activity-description">Successfully created interactive charts for weather data analysis.</p>
+                        <span class="activity-time">2 hours ago</span>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-icon robotics">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h4 class="activity-title">Built Line-Following Robot</h4>
+                        <p class="activity-description">Programmed Modi modules to create an autonomous navigation system.</p>
+                        <span class="activity-time">Yesterday</span>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-icon collaboration">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h4 class="activity-title">Joined Collaborative Project</h4>
+                        <p class="activity-description">Started working on "Renewable Energy Solutions" with 3 other students.</p>
+                        <span class="activity-time">3 days ago</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Floating Action Button for Quick Help -->
+    <button class="fab-help" id="helpBtn" title="Get Help">
+        <i class="fas fa-question"></i>
+    </button>
+
+    <!-- Modals and Overlays -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    
+    <!-- Project Creation Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Create New STEAM Project</h3>
+                <button class="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Project Theme</label>
+                    <select class="form-control">
+                        <option>Environmental Sustainability</option>
+                        <option>Space Exploration</option>
+                        <option>Biotechnology</option>
+                        <option>Renewable Energy</option>
+                        <option>Smart Cities</option>
+                        <option>Ocean Conservation</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Learning Frameworks</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" checked> NGSS (Next Generation Science Standards)</label>
+                        <label><input type="checkbox" checked> ISTE (International Society for Technology in Education)</label>
+                        <label><input type="checkbox"> OECD Education 2030</label>
+                        <label><input type="checkbox"> DIGICOMP 2.2</label>
+                        <label><input type="checkbox"> NCF 2023</label>
+                        <label><input type="checkbox"> Multiple Intelligence Theory</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Difficulty Level</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="difficulty" value="beginner"> Beginner</label>
+                        <label><input type="radio" name="difficulty" value="intermediate" checked> Intermediate</label>
+                        <label><input type="radio" name="difficulty" value="advanced"> Advanced</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary">Cancel</button>
+                <button class="btn-primary">Generate Project</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

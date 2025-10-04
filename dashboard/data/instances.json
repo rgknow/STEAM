@@ -1,0 +1,128 @@
+{
+  "instance_water_alex": {
+    "instance_id": "instance_water_alex",
+    "user_id": "alex_student",
+    "project_id": "water_sustainability_001",
+    "status": "in_progress",
+    "progress_percentage": 65.0,
+    "current_activity": "data_analysis_phase",
+    "completed_activities": [
+      "project_introduction",
+      "background_research",
+      "water_sample_collection",
+      "ph_testing_lab",
+      "community_survey"
+    ],
+    "time_spent_minutes": 450,
+    "engagement_score": 4.2,
+    "adaptations_applied": [
+      "Visual step-by-step guides provided",
+      "Interactive diagrams and models included",
+      "Immediate feedback mechanisms enabled",
+      "Pattern recognition and logical sequence activities"
+    ],
+    "artifacts_created": [
+      "water_quality_data.csv",
+      "community_survey_results.pdf",
+      "ph_testing_lab_report.docx",
+      "water_sources_map_visual.png"
+    ],
+    "reflection_entries": [
+      {
+        "date": "2024-09-20T00:00:00",
+        "reflection": "I was surprised to learn how much the pH levels varied between different water sources in our community. The visual mapping really helped me see the patterns.",
+        "learning_insights": [
+          "pH testing methodology",
+          "Data visualization importance",
+          "Community water systems"
+        ]
+      },
+      {
+        "date": "2024-09-25T00:00:00",
+        "reflection": "Working with the Modi sensors made data collection so much more accurate and interesting. I can see how technology enhances scientific investigation.",
+        "learning_insights": [
+          "Sensor technology applications",
+          "Data accuracy importance",
+          "Technology-science integration"
+        ]
+      }
+    ],
+    "peer_collaborators": [
+      "maya_explorer"
+    ],
+    "mentor_feedback": [
+      {
+        "date": "2024-09-22T00:00:00",
+        "mentor": "Ms. Rodriguez - Environmental Scientist",
+        "feedback": "Excellent work on your data collection methodology. Your visual approach to organizing the data shows real scientific thinking. Consider exploring the seasonal variations in your next phase.",
+        "suggestions": [
+          "Investigate seasonal patterns",
+          "Connect with local water authority",
+          "Explore filtration solutions"
+        ]
+      }
+    ],
+    "started_at": "2024-09-15T00:00:00",
+    "completed_at": null,
+    "last_activity": "2024-10-04T00:00:00"
+  },
+  "instance_mars_alex": {
+    "instance_id": "instance_mars_alex",
+    "user_id": "alex_student",
+    "project_id": "mars_rover_mission_001",
+    "status": "completed",
+    "progress_percentage": 100.0,
+    "current_activity": null,
+    "completed_activities": [
+      "project_introduction",
+      "mars_environment_research",
+      "rover_design_challenge",
+      "programming_navigation",
+      "mission_simulation",
+      "final_presentation"
+    ],
+    "time_spent_minutes": 720,
+    "engagement_score": 4.5,
+    "adaptations_applied": [
+      "Visual learning materials and interactive diagrams",
+      "Logical step-by-step progressions",
+      "Hands-on building and testing activities",
+      "Pattern recognition and logical sequence activities"
+    ],
+    "artifacts_created": [
+      "mars_rover_prototype.jpg",
+      "navigation_algorithm.py",
+      "mission_report.pdf",
+      "mars_mission_presentation.pptx"
+    ],
+    "reflection_entries": [
+      {
+        "date": "2024-08-20T00:00:00",
+        "reflection": "Building the rover was challenging but so rewarding. I learned that engineering is about solving problems step by step, and each failure teaches you something new.",
+        "learning_insights": [
+          "Engineering design process",
+          "Problem-solving persistence",
+          "Iterative improvement"
+        ]
+      }
+    ],
+    "peer_collaborators": [
+      "sam_innovator"
+    ],
+    "mentor_feedback": [
+      {
+        "date": "2024-08-25T00:00:00",
+        "mentor": "Dr. Chen - Aerospace Engineer",
+        "feedback": "Outstanding work on your rover design and programming. Your systematic approach to testing and refinement shows real engineering thinking. Ready for more advanced challenges!",
+        "suggestions": [
+          "Explore advanced robotics",
+          "Consider aerospace engineering",
+          "Join robotics competition team"
+        ]
+      }
+    ],
+    "started_at": "2024-08-01T00:00:00",
+    "completed_at": "2024-08-30T00:00:00",
+    "last_activity": "2024-08-30T00:00:00"
+  }
+}

@@ -1,0 +1,453 @@
+{
+  "water_sustainability_001": {
+    "project_id": "water_sustainability_001",
+    "title": "Water Sustainability Challenge",
+    "description": "Through visual modeling, interactive demonstrations, and hands-on investigation, investigate water quality challenges in your community and design data-driven solutions that combine scientific inquiry, technological tools, engineering design, creative communication, and mathematical analysis.\n\nThis project aligns with Next Generation Science Standards, International Society for Technology in Education, Project-Based Learning standards and emphasizes 21st-century skills development.",
+    "theme": "Environmental Sustainability",
+    "learning_outcomes": [
+      {
+        "outcome_id": "lo_water_001",
+        "description": "Conduct scientific investigations using environmental monitoring techniques",
+        "framework": "NGSS",
+        "cognitive_level": "Analyze",
+        "assessment_criteria": [
+          "Formulates testable questions based on water quality observations",
+          "Designs controlled investigations for water testing",
+          "Analyzes data to identify pollution patterns",
+          "Constructs evidence-based explanations for water quality issues"
+        ],
+        "steam_integration": [
+          "Science",
+          "Mathematics"
+        ],
+        "is_achieved": false,
+        "evidence": []
+      },
+      {
+        "outcome_id": "lo_water_002",
+        "description": "Use digital tools to collect, analyze, and visualize water quality data",
+        "framework": "ISTE",
+        "cognitive_level": "Apply",
+        "assessment_criteria": [
+          "Selects appropriate digital tools for data collection",
+          "Uses technology effectively for data analysis",
+          "Creates compelling data visualizations",
+          "Interprets digital results accurately"
+        ],
+        "steam_integration": [
+          "Technology",
+          "Mathematics"
+        ],
+        "is_achieved": false,
+        "evidence": []
+      },
+      {
+        "outcome_id": "lo_water_003",
+        "description": "Apply engineering design process to develop water sustainability solutions",
+        "framework": "NGSS",
+        "cognitive_level": "Create",
+        "assessment_criteria": [
+          "Defines criteria and constraints for water solutions",
+          "Generates multiple design alternatives",
+          "Builds and tests water treatment prototypes",
+          "Optimizes solutions based on testing results"
+        ],
+        "steam_integration": [
+          "Engineering",
+          "Technology"
+        ],
+        "is_achieved": false,
+        "evidence": []
+      }
+    ],
+    "steam_components": {
+      "Science": [
+        "Water chemistry and testing",
+        "Environmental monitoring techniques",
+        "Ecosystem impact analysis",
+        "Scientific inquiry methods"
+      ],
+      "Technology": [
+        "Digital pH meters and sensors",
+        "Data collection apps",
+        "Water quality databases",
+        "Presentation software"
+      ],
+      "Engineering": [
+        "Water filtration system design",
+        "Problem identification and solving",
+        "Prototype development and testing",
+        "System optimization"
+      ],
+      "Arts": [
+        "Public awareness campaign design",
+        "Data storytelling and visualization",
+        "Community presentation materials",
+        "Infographic creation"
+      ],
+      "Mathematics": [
+        "Statistical analysis of water data",
+        "Trend identification and graphing",
+        "Ratio and proportion calculations",
+        "Cost-benefit analysis"
+      ]
+    },
+    "frameworks": [
+      "NGSS",
+      "ISTE",
+      "PBL"
+    ],
+    "difficulty_level": "intermediate",
+    "estimated_duration_hours": 20,
+    "robotics_components": [
+      "Modi Environment Module for water temperature monitoring",
+      "Network Module for data transmission to cloud databases",
+      "Display Module for real-time water quality feedback"
+    ],
+    "coding_elements": [
+      "Python scripts for water data analysis",
+      "Statistical visualization with matplotlib",
+      "Data processing with pandas library",
+      "Automated water quality reporting"
+    ],
+    "required_materials": [
+      "pH testing kit",
+      "Digital thermometer",
+      "Water collection containers",
+      "Modi robotics sensors",
+      "Computer/tablet for analysis",
+      "Graph paper and calculators"
+    ],
+    "prerequisites": [
+      "Basic understanding of scientific method",
+      "Familiarity with measurement and data collection",
+      "Elementary knowledge of environmental systems"
+    ],
+    "extensions": [
+      "Connect with local water treatment facilities",
+      "Develop community action plan",
+      "Create automated monitoring system",
+      "Present findings to city council"
+    ],
+    "assessment_rubric": {
+      "performance_levels": [
+        "Novice",
+        "Developing",
+        "Proficient",
+        "Advanced",
+        "Expert"
+      ],
+      "criteria": {
+        "NGSS_Analyze": {
+          "description": "Conduct scientific investigations using environmental monitoring techniques",
+          "assessment_criteria": [
+            "Formulates testable questions based on water quality observations",
+            "Designs controlled investigations for water testing",
+            "Analyzes data to identify pollution patterns",
+            "Constructs evidence-based explanations for water quality issues"
+          ],
+          "performance_descriptors": {
+            "Novice": "Beginning understanding of conduct scientific investigations using environmental monitoring techniques with significant support needed",
+            "Developing": "Partial demonstration of conduct scientific investigations using environmental monitoring techniques with some support needed",
+            "Proficient": "Clear demonstration of conduct scientific investigations using environmental monitoring techniques meeting grade-level expectations",
+            "Advanced": "Sophisticated demonstration of conduct scientific investigations using environmental monitoring techniques exceeding expectations",
+            "Expert": "Exceptional demonstration of conduct scientific investigations using environmental monitoring techniques with innovation and mastery"
+          },
+          "steam_connections": [
+            "Science",
+            "Mathematics"
+          ]
+        }
+      },
+      "framework_alignment": {
+        "Next Generation Science Standards": [],
+        "International Society for Technology in Education": [],
+        "Project-Based Learning": []
+      },
+      "steam_integration_scoring": {
+        "Science": {
+          "weight": 20,
+          "indicators": []
+        },
+        "Technology": {
+          "weight": 20,
+          "indicators": []
+        },
+        "Engineering": {
+          "weight": 20,
+          "indicators": []
+        },
+        "Arts": {
+          "weight": 20,
+          "indicators": []
+        },
+        "Mathematics": {
+          "weight": 20,
+          "indicators": []
+        }
+      },
+      "personalized_adaptations": [
+        "Visual documentation and presentation options available"
+      ]
+    },
+    "created_at": "2024-09-15T10:00:00"
+  },
+  "mars_rover_mission_001": {
+    "project_id": "mars_rover_mission_001",
+    "title": "Mars Rover Mission: Engineering Space Solutions",
+    "description": "Design and test solutions for space exploration challenges, combining physics principles, engineering design, technology integration, creative problem-solving, and mathematical modeling to address real challenges faced by astronauts and mission planners.",
+    "theme": "Space Exploration",
+    "learning_outcomes": [
+      {
+        "outcome_id": "lo_mars_001",
+        "description": "Apply physics principles to solve space exploration challenges",
+        "framework": "NGSS",
+        "cognitive_level": "Apply",
+        "assessment_criteria": [
+          "Uses physics concepts in rover design",
+          "Applies mathematical calculations for mission planning",
+          "Demonstrates understanding of space environment challenges"
+        ],
+        "steam_integration": [
+          "Science",
+          "Mathematics"
+        ],
+        "is_achieved": true,
+        "evidence": [
+          "Successful rover prototype",
+          "Physics calculation worksheet"
+        ]
+      }
+    ],
+    "steam_components": {
+      "Science": [
+        "Physics of space",
+        "Astronomy",
+        "Materials science",
+        "Life support systems"
+      ],
+      "Technology": [
+        "Robotics programming",
+        "Communication systems",
+        "Navigation software",
+        "Simulation tools"
+      ],
+      "Engineering": [
+        "Aerospace engineering",
+        "Systems design",
+        "Mission planning",
+        "Risk assessment"
+      ],
+      "Arts": [
+        "Mission patch design",
+        "Technical illustration",
+        "Public engagement materials",
+        "Documentary creation"
+      ],
+      "Mathematics": [
+        "Orbital mechanics",
+        "Trajectory calculations",
+        "Resource optimization",
+        "Statistical analysis"
+      ]
+    },
+    "frameworks": [
+      "OECD",
+      "DIGICOMP",
+      "NCF"
+    ],
+    "difficulty_level": "intermediate",
+    "estimated_duration_hours": 30,
+    "robotics_components": [
+      "Modi Motor Module for rover movement",
+      "Environment Module for environmental sensing",
+      "Network Module for mission communication"
+    ],
+    "coding_elements": [
+      "Rover navigation algorithms",
+      "Sensor data processing",
+      "Mission simulation software",
+      "Autonomous behavior programming"
+    ],
+    "required_materials": [
+      "Modi robotics kit",
+      "Building materials for rover chassis",
+      "Computer for programming",
+      "Mission simulation software"
+    ],
+    "prerequisites": [
+      "Basic physics concepts",
+      "Elementary programming skills",
+      "Understanding of scientific method"
+    ],
+    "extensions": [
+      "Connect with NASA educational programs",
+      "Advanced orbital mechanics study",
+      "Multi-rover collaboration missions"
+    ],
+    "assessment_rubric": {
+      "performance_levels": [
+        "Novice",
+        "Developing",
+        "Proficient",
+        "Advanced",
+        "Expert"
+      ],
+      "criteria": {},
+      "framework_alignment": {},
+      "steam_integration_scoring": {
+        "Science": {
+          "weight": 20,
+          "indicators": []
+        },
+        "Technology": {
+          "weight": 20,
+          "indicators": []
+        },
+        "Engineering": {
+          "weight": 20,
+          "indicators": []
+        },
+        "Arts": {
+          "weight": 20,
+          "indicators": []
+        },
+        "Mathematics": {
+          "weight": 20,
+          "indicators": []
+        }
+      },
+      "personalized_adaptations": []
+    },
+    "created_at": "2024-08-01T00:00:00"
+  },
+  "smart_garden_ecosystem_001": {
+    "project_id": "smart_garden_ecosystem_001",
+    "title": "Smart Garden Ecosystem",
+    "description": "Create an automated garden system combining IoT sensors, biological understanding, data analysis, and engineering design to optimize plant growth while learning about sustainable agriculture and technology integration.",
+    "theme": "Environmental Sustainability",
+    "learning_outcomes": [
+      {
+        "outcome_id": "lo_garden_001",
+        "description": "Design integrated biological and technological systems",
+        "framework": "STEAM",
+        "cognitive_level": "Create",
+        "assessment_criteria": [
+          "Integrates biological and technological knowledge",
+          "Designs functional automated systems",
+          "Demonstrates systems thinking"
+        ],
+        "steam_integration": [
+          "Science",
+          "Technology",
+          "Engineering"
+        ],
+        "is_achieved": false,
+        "evidence": []
+      }
+    ],
+    "steam_components": {
+      "Science": [
+        "Plant biology",
+        "Soil science",
+        "Environmental factors",
+        "Data collection methods"
+      ],
+      "Technology": [
+        "IoT sensors",
+        "Automation systems",
+        "Data logging",
+        "Mobile app development"
+      ],
+      "Engineering": [
+        "System design",
+        "Irrigation engineering",
+        "Problem solving",
+        "Optimization"
+      ],
+      "Arts": [
+        "Garden design aesthetics",
+        "User interface design",
+        "Documentation",
+        "Presentation"
+      ],
+      "Mathematics": [
+        "Data analysis",
+        "Growth rate calculations",
+        "Resource optimization",
+        "Statistical modeling"
+      ]
+    },
+    "frameworks": [
+      "STEAM",
+      "Multiple Intelligence",
+      "Learning Styles"
+    ],
+    "difficulty_level": "intermediate",
+    "estimated_duration_hours": 25,
+    "robotics_components": [
+      "Modi Environment Module for soil and air monitoring",
+      "Network Module for remote monitoring",
+      "Motor Module for automated watering system"
+    ],
+    "coding_elements": [
+      "Sensor data collection scripts",
+      "Automated irrigation control",
+      "Growth tracking algorithms",
+      "Data visualization dashboards"
+    ],
+    "required_materials": [
+      "Modi robotics kit",
+      "Seeds and planting materials",
+      "Soil and containers",
+      "Water pumps and tubing",
+      "Computer/tablet"
+    ],
+    "prerequisites": [
+      "Basic understanding of plant growth",
+      "Elementary programming concepts",
+      "Familiarity with sensors"
+    ],
+    "extensions": [
+      "Hydroponic system integration",
+      "Machine learning for growth prediction",
+      "Community garden application",
+      "Commercial agriculture scaling"
+    ],
+    "assessment_rubric": {
+      "performance_levels": [
+        "Novice",
+        "Developing",
+        "Proficient",
+        "Advanced",
+        "Expert"
+      ],
+      "criteria": {},
+      "framework_alignment": {},
+      "steam_integration_scoring": {
+        "Science": {
+          "weight": 20,
+          "indicators": []
+        },
+        "Technology": {
+          "weight": 20,
+          "indicators": []
+        },
+        "Engineering": {
+          "weight": 20,
+          "indicators": []
+        },
+        "Arts": {
+          "weight": 20,
+          "indicators": []
+        },
+        "Mathematics": {
+          "weight": 20,
+          "indicators": []
+        }
+      },
+      "personalized_adaptations": []
+    },
+    "created_at": "2024-10-01T00:00:00"
+  }
+}

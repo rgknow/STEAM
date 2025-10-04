@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEAM - Coding Assistant</title>
+    <link rel="stylesheet" href="python-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.44.0/min/vs/editor/editor.main.min.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">� STEAM Python</h1>
+                <div class="header-badge">
+                    <span class="python-badge">Python-Only Mode</span>
+                </div>
+                <div class="header-controls">
+                    <select id="aiProvider" class="provider-select">
+                        <option value="mock">Mock Python AI</option>
+                        <option value="openai">OpenAI GPT (Python)</option>
+                        <option value="anthropic">Claude (Python)</option>
+                    </select>
+                    <span id="connectionStatus" class="status-indicator offline">Offline</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Layout -->
+        <div class="main-layout">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h3>🐍 Python Files</h3>
+                    <div class="python-info">
+                        <small>Only Python-related files are shown</small>
+                    </div>
+                    <div class="file-explorer">
+                        <div class="file-tree" id="fileTree">
+                            <div class="loading">Loading Python files...</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3>Session Info</h3>
+                    <div class="session-info">
+                        <div class="info-item">
+                            <label>Session:</label>
+                            <span id="sessionId">Not connected</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Messages:</label>
+                            <span id="messageCount">0</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Editor Panel -->
+                <div class="editor-panel">
+                    <div class="editor-header">
+                        <div class="editor-tabs" id="editorTabs">
+                            <div class="tab active" data-file="welcome">
+                                <span class="tab-name">Welcome</span>
+                            </div>
+                        </div>
+                        <div class="editor-actions">
+                            <button id="saveFile" class="btn-icon" title="Save File">💾</button>
+                            <button id="newFile" class="btn-icon" title="New File">📄</button>
+                        </div>
+                    </div>
+                    <div class="editor-container">
+                        <div id="editor" class="monaco-editor"></div>
+                    </div>
+                </div>
+
+                <!-- Chat Panel -->
+                <div class="chat-panel">
+                    <div class="chat-header">
+                        <h3>� Python Assistant</h3>
+                        <div class="python-mode-indicator">Python-Only</div>
+                        <button id="clearChat" class="btn-icon" title="Clear Chat">🗑️</button>
+                    </div>
+                    
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message welcome-message">
+                            <div class="message-content">
+                                <div class="message-header">
+                                    <span class="message-role">� STEAM Python</span>
+                                    <span class="message-time">Now</span>
+                                </div>
+                                <div class="message-text">
+                                    Welcome to STEAM Python-Only Mode! I'm your specialized Python assistant. I can help you with:
+                                    <ul>
+                                        <li>🐍 Python programming (syntax, best practices)</li>
+                                        <li>🌐 Web frameworks (Django, Flask, FastAPI)</li>
+                                        <li>📊 Data science (Pandas, NumPy, Matplotlib)</li>
+                                        <li>🧪 Testing (pytest, unittest)</li>
+                                        <li>📦 Package management (pip, poetry, conda)</li>
+                                        <li>🔧 Python project organization</li>
+                                        <li>⚡ Python command execution</li>
+                                    </ul>
+                                    <div class="python-restriction-note">
+                                        <strong>Note:</strong> This instance only works with Python files and Python-related tasks.
+                                    </div>
+                                    What Python project can I help you with today? 🚀
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="typing-indicator" id="typingIndicator" style="display: none;">
+                        <div class="typing-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span>STEAM is typing...</span>
+                    </div>
+                    
+                    <div class="chat-input-container">
+                        <div class="chat-input-wrapper">
+                            <textarea 
+                                id="chatInput" 
+                                placeholder="Ask me about Python... (Shift+Enter for new line, Enter to send)"
+                                rows="1"
+                            ></textarea>
+                            <button id="sendButton" class="send-button">
+                                <span class="send-icon">📤</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Approval Modal -->
+        <div id="approvalModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>⚠️ Command Approval Required</h3>
+                </div>
+                <div class="modal-body">
+                    <p>STEAM wants to execute the following command:</p>
+                    <div class="command-preview" id="commandPreview"></div>
+                    <p>Do you want to allow this?</p>
+                </div>
+                <div class="modal-actions">
+                    <button id="approveCommand" class="btn btn-primary">✅ Approve</button>
+                    <button id="rejectCommand" class="btn btn-secondary">❌ Reject</button>
+                    <button id="modifyCommand" class="btn btn-secondary">✏️ Modify</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Connecting to STEAM...</div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.44.0/min/vs/loader.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
