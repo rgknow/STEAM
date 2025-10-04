@@ -126,7 +126,13 @@ class STEAMDashboard {
         const lowerMessage = message.toLowerCase();
         
         // Intent recognition based on educational keywords
-        if (lowerMessage.includes('project') || lowerMessage.includes('create')) {
+        if (lowerMessage.includes('water guardians') || lowerMessage.includes('water guardian')) {
+            return this.generateWaterGuardiansResponse(message);
+        } else if (lowerMessage.includes('lesson 1') || lowerMessage.includes('start lesson')) {
+            return this.generateLessonStartResponse(message);
+        } else if (lowerMessage.includes('ready for sensors') || lowerMessage.includes('sensor setup')) {
+            return this.generateSensorSetupResponse(message);
+        } else if (lowerMessage.includes('project') || lowerMessage.includes('create')) {
             return this.generateProjectResponse(message);
         } else if (lowerMessage.includes('robot') || lowerMessage.includes('modi')) {
             return this.generateRoboticsResponse(message);
@@ -178,9 +184,10 @@ Would you like me to generate a detailed project plan with specific learning out
 - Motor Module (for movement and actuation)
 
 **Suggested Projects for Your Level**:
-1. **Smart Environmental Monitor** - Build a system that tracks air quality
-2. **Autonomous Navigation Robot** - Create a robot that can navigate obstacles
-3. **Interactive Art Installation** - Combine sensors with creative expression
+1. **Water Guardians: Smart Irrigation System** - Build an automated system that conserves water while keeping plants healthy (Featured Project!)
+2. **Smart Environmental Monitor** - Build a system that tracks air quality
+3. **Autonomous Navigation Robot** - Create a robot that can navigate obstacles
+4. **Interactive Art Installation** - Combine sensors with creative expression
 
 **Learning Integration**:
 - Python programming for module control
@@ -188,7 +195,202 @@ Would you like me to generate a detailed project plan with specific learning out
 - Mathematics (data analysis, algorithms)
 - Engineering design process
 
-Which robotics project interests you most? I can provide step-by-step guidance!`;
+        Which robotics project interests you most? I can provide step-by-step guidance!
+
+**🌱 Special Feature: Water Guardians Project**
+Our newest interdisciplinary project combines:
+- Soil moisture sensing with calibration
+- Scratch simulation for logic modeling  
+- Python programming for real-time control
+- Environmental science and conservation ethics
+- 8 comprehensive lessons with full robotics integration
+
+Say "Water Guardians" to learn more about this featured project!`;
+    }
+    
+    generateWaterGuardiansResponse(message) {
+        return `🌱 **Welcome to Water Guardians: Smart Irrigation System!** 
+
+This is our flagship interdisciplinary project that tackles real-world water conservation through smart technology. Perfect for combining STEAM learning with environmental responsibility!
+
+**🎯 Project Overview**:
+- **Duration**: 8 comprehensive lessons (6-8 weeks)
+- **Grade Levels**: Adaptable for Middle School through High School
+- **Real-World Impact**: Build functioning smart irrigation systems
+
+**🔧 What You'll Build**:
+- Soil moisture monitoring system using calibrated sensors
+- Automated watering mechanism with precise control
+- Data logging and analysis dashboard
+- Environmental impact assessment tools
+
+**💻 Technical Skills You'll Learn**:
+- **Scratch Programming**: Logic simulation and system modeling
+- **Python Coding**: Real-time sensor control and data analysis
+- **Electronics**: Luxrobo MODI + ESP32 integration
+- **Data Science**: Moisture calibration and predictive modeling
+
+**🌍 STEAM Integration**:
+- **Science**: Plant biology, soil science, water cycle
+- **Technology**: IoT sensors, automation systems
+- **Engineering**: System design, calibration protocols
+- **Arts**: User interface design, data visualizations
+- **Mathematics**: Statistical analysis, optimization algorithms
+
+**📚 Educational Standards Covered**:
+- NGSS: Engineering Design, Earth Systems
+- ISTE: Computational Thinking, Digital Citizenship
+- UNESCO: Sustainability Education
+- And many more international frameworks!
+
+**🎓 Assessment & Differentiation**:
+- Portfolio-based authentic assessment
+- Peer collaboration and review
+- Multiple learning modalities supported
+- Extensions for advanced learners
+
+Ready to start your Water Guardians journey? I can guide you through:
+1. **Lesson 1**: Project introduction and system planning
+2. **Hardware Setup**: Connecting your MODI kit and sensors
+3. **Coding Basics**: Starting with Scratch simulations
+4. **Real Implementation**: Moving to Python control systems
+
+Which aspect interests you most? Let's dive in! 🚀`;
+    }
+    
+    generateLessonStartResponse(message) {
+        return `🎯 **Water Guardians - Lesson 1: Introduction & System Planning**
+
+Welcome to your first lesson! Let's start by understanding the challenge and planning our smart irrigation solution.
+
+**🌟 Today's Learning Objectives**:
+- Understand global water scarcity challenges
+- Analyze traditional vs. smart irrigation methods
+- Design initial system architecture
+- Set up project portfolio and collaboration tools
+
+**🔍 Opening Challenge**:
+*"Did you know that agriculture uses 70% of global freshwater, but up to 60% is wasted through inefficient irrigation?"*
+
+Let's explore how we can be part of the solution!
+
+**📝 Activity Sequence**:
+
+**1. Problem Investigation (15 minutes)**
+- Watch: "Water Crisis Around the World" video
+- Discussion: How does water scarcity affect your local community?
+- Research: Find 3 examples of water conservation success stories
+
+**2. System Design Thinking (20 minutes)**
+- Brainstorm: What makes irrigation "smart"?
+- Sketch: Your initial system design ideas
+- Consider: What sensors and controls do we need?
+
+**3. Technical Planning (15 minutes)**
+- Introduction to your MODI kit components
+- Plan: Which modules will handle what functions?
+- Timeline: Map out our 8-lesson journey
+
+**4. Portfolio Setup (10 minutes)**
+- Create your digital portfolio
+- Set learning goals and success criteria
+- Establish collaboration partnerships
+
+**🎨 Creative Extension**:
+Design a logo for your Water Guardians team and create a mission statement for your project!
+
+**🏠 Connection to Home**:
+- Observe irrigation methods in your neighborhood
+- Measure water usage in your garden (if available)
+- Interview family about water conservation practices
+
+**Next Steps**: After completing these activities, say "Ready for sensors" to learn about the technical components we'll use!
+
+Ready to become a Water Guardian? Let's start saving the world, one drop at a time! 💧🌱`;
+    }
+    
+    generateSensorSetupResponse(message) {
+        return `🔧 **Water Guardians - Lesson 2: Sensor Technology & Calibration**
+
+Excellent! Now let's dive into the technical heart of our system - understanding and setting up our sensors.
+
+**🎯 Today's Learning Objectives**:
+- Understand different types of moisture sensors
+- Learn calibration principles and importance
+- Set up MODI Environment Module
+- Create accurate measurement protocols
+
+**🔬 The Science Behind Soil Sensors**:
+
+**1. Capacitive vs. Resistive Sensors**
+- **Capacitive** (like MODI): Measures dielectric constant changes
+- **Resistive**: Measures electrical resistance through soil
+- Why capacitive is better for long-term projects
+
+**2. Calibration Science**
+- *Dry Point*: Sensor in completely dry conditions
+- *Wet Point*: Sensor in water-saturated soil
+- *Field Capacity*: Optimal moisture for plant growth
+
+**🛠️ Hands-On Setup**:
+
+**Step 1: MODI Kit Assembly (10 minutes)**
+\`\`\`
+Components needed:
+- Network Module (WiFi/Bluetooth)
+- Environment Module (moisture, temperature, light)
+- Display Module (for readings)
+- Battery Module (power)
+\`\`\`
+
+**Step 2: Physical Calibration (15 minutes)**
+1. **Dry Calibration**: Place sensor in completely dry soil
+   - Record baseline reading
+   - This becomes your 0% moisture reference
+
+2. **Wet Calibration**: Saturate soil with water
+   - Record maximum reading
+   - This becomes your 100% moisture reference
+
+**Step 3: Test Garden Setup (20 minutes)**
+- Create test containers with different moisture levels
+- 25%, 50%, 75% moisture targets
+- Verify sensor accuracy across the range
+
+**💻 Programming Introduction**:
+
+**Scratch Simulation First**:
+\`\`\`scratch-blocks
+When [green flag] clicked
+Set [moisture-reading] to (environment sensor value)
+Set [moisture-percent] to (((moisture-reading - dry-value) / (wet-value - dry-value)) * 100)
+If <moisture-percent < 30> then
+  Say [Plant needs water!] for 2 seconds
+End
+\`\`\`
+
+**🧮 The Math Behind Calibration**:
+*Moisture % = ((Current Reading - Dry Reading) / (Wet Reading - Dry Reading)) × 100*
+
+**🌱 Plant Science Connection**:
+- Different plants need different moisture levels
+- Overwatering can be as harmful as underwatering
+- Root zone vs surface moisture differences
+
+**📊 Data Collection Protocol**:
+1. Take readings every 30 seconds
+2. Record in your project portfolio
+3. Note environmental conditions (temperature, humidity)
+4. Create graphs to visualize patterns
+
+**🎨 Extension Activities**:
+- Research moisture needs of different plant species
+- Design a moisture level indicator system
+- Create data visualization dashboard
+
+**Next Steps**: Once you've completed calibration, say "Ready for Python" to move into automated control programming!
+
+Great work setting up the sensing foundation of your Water Guardian system! 📊🌿`;
     }
     
     generateCodingResponse(message) {

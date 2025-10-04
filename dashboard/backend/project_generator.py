@@ -118,6 +118,146 @@ class STEAMProjectGenerator:
         )
         
         # Generate STEAM integration components
+        
+    def load_water_guardians_project(self) -> Dict[str, Any]:
+        """
+        Load the comprehensive Water Guardians irrigation project
+        
+        Returns:
+            Complete Water Guardians project specification
+        """
+        try:
+            from pathlib import Path
+            project_path = Path(__file__).parent.parent.parent / "projects" / "water_guardians_irrigation.json"
+            
+            if project_path.exists():
+                with open(project_path, 'r', encoding='utf-8') as f:
+                    project_data = json.load(f)
+                
+                # Add any dynamic processing if needed
+                project_data['loaded_at'] = datetime.now().isoformat()
+                project_data['status'] = 'ready'
+                
+                self.logger.info("Loaded Water Guardians irrigation project")
+                return project_data
+            else:
+                # Return a simplified version if file doesn't exist
+                self.logger.warning("Water Guardians project file not found, creating basic version")
+                return self._create_basic_water_guardians_project()
+                
+        except Exception as e:
+            self.logger.error(f"Failed to load Water Guardians project: {e}")
+            return self._create_basic_water_guardians_project()
+
+    def _create_basic_water_guardians_project(self) -> Dict[str, Any]:
+        """Create a basic version of the Water Guardians project if full version unavailable"""
+        return {
+            "project_id": "water_guardians_irrigation_basic",
+            "project_meta": {
+                "title": "Water Guardians: Smart Irrigation System",
+                "grade_band": "Grades 6–8",
+                "duration": "8 lessons × 50 minutes (2 weeks)",
+                "theme": "Smart irrigation for responsible water use",
+                "context": "Local water conservation and automation",
+                "driving_question": "How might we design a smart irrigation helper that waters only when plants truly need it?",
+                "project_type": "interdisciplinary_steam",
+                "difficulty_level": "intermediate"
+            },
+            "lesson_sequence": [
+                {
+                    "lesson_number": 1,
+                    "title": "Launch & Needfinding",
+                    "objectives": ["Frame water conservation challenge", "Identify stakeholders and constraints"],
+                    "duration_minutes": 50
+                },
+                {
+                    "lesson_number": 2,
+                    "title": "Sensors & Calibration",
+                    "objectives": ["Understand sensor operation", "Design calibration protocol"],
+                    "duration_minutes": 50
+                },
+                {
+                    "lesson_number": 3,
+                    "title": "Scratch Simulation",
+                    "objectives": ["Model irrigation logic", "Implement hysteresis control"],
+                    "duration_minutes": 50
+                },
+                {
+                    "lesson_number": 4,
+                    "title": "Hardware Wiring",
+                    "objectives": ["Wire sensors safely", "Follow electrical protocols"],
+                    "duration_minutes": 50
+                },
+                {
+                    "lesson_number": 5,
+                    "title": "Python Programming",
+                    "objectives": ["Implement control loop", "Log data for analysis"],
+                    "duration_minutes": 50
+                },
+                {
+                    "lesson_number": 6,
+                    "title": "Testing & Iteration",
+                    "objectives": ["Plan fair tests", "Revise based on evidence"],
+                    "duration_minutes": 50
+                },
+                {
+                    "lesson_number": 7,
+                    "title": "Communication & Ethics",
+                    "objectives": ["Create presentation materials", "Apply digital citizenship"],
+                    "duration_minutes": 50
+                },
+                {
+                    "lesson_number": 8,
+                    "title": "Showcase & Reflection",
+                    "objectives": ["Demonstrate prototype", "Reflect on learning"],
+                    "duration_minutes": 50
+                }
+            ],
+            "robotics_integration": {
+                "primary_kit": "Luxrobo MODI + ESP32",
+                "key_components": ["soil moisture sensor", "DHT sensor", "servo motor", "LED indicator", "OLED display"]
+            },
+            "coding_components": {
+                "scratch_simulation": {"focus": "Logic modeling with hysteresis"},
+                "python_implementation": {"focus": "Real-time control and data logging"}
+            },
+            "status": "basic_version_loaded",
+            "loaded_at": datetime.now().isoformat()
+        }
+
+    def get_featured_projects(self) -> List[Dict[str, Any]]:
+        """
+        Return a list of featured projects including Water Guardians
+        
+        Returns:
+            List of featured project summaries
+        """
+        featured_projects = []
+        
+        # Add Water Guardians as a featured project
+        water_guardians = {
+            "id": "water_guardians_irrigation",
+            "title": "Water Guardians: Smart Irrigation System",
+            "description": "Design and build an automated irrigation system that conserves water while keeping plants healthy.",
+            "grade_level": "6-8",
+            "duration": "2 weeks",
+            "theme": "Environmental Sustainability",
+            "steam_areas": ["Science", "Technology", "Engineering", "Arts", "Mathematics"],
+            "key_features": [
+                "Sensor-based automation",
+                "Python and Scratch programming", 
+                "Real-world problem solving",
+                "Environmental impact focus",
+                "Robotics integration"
+            ],
+            "standards": ["NGSS", "ISTE", "DIGCOMP", "OECD", "NCF 2023"],
+            "difficulty": "Intermediate",
+            "featured": True,
+            "image_url": "/assets/projects/water_guardians_preview.jpg"
+        }
+        featured_projects.append(water_guardians)
+        
+        return featured_projects
         steam_components = self._generate_steam_components(
             project_spec, learner_profile, template
         )

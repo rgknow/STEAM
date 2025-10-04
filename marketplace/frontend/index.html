@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEAM Marketplace - Global Educational Content Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>STEAM Marketplace</span>
+            </div>
+            
+            <div class="nav-search">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search educational content, lesson plans, projects...">
+                <button class="search-btn" onclick="performSearch()">Search</button>
+            </div>
+            
+            <div class="nav-actions">
+                <div class="token-balance" id="tokenBalance" style="display: none;">
+                    <i class="fas fa-coins"></i>
+                    <span id="tokenCount">0</span> tokens
+                </div>
+                <button class="nav-btn" id="loginBtn" onclick="showLoginModal()">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+                <button class="nav-btn primary" id="registerBtn" onclick="showRegisterModal()">
+                    <i class="fas fa-user-plus"></i> Join
+                </button>
+                <div class="user-menu" id="userMenu" style="display: none;">
+                    <img id="userAvatar" class="user-avatar" src="" alt="User">
+                    <div class="dropdown">
+                        <button class="dropdown-btn" onclick="toggleUserDropdown()">
+                            <span id="userName">User</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-content" id="userDropdown">
+                            <a href="#" onclick="showProfile()"><i class="fas fa-user"></i> Profile</a>
+                            <a href="#" onclick="showMyContent()"><i class="fas fa-folder"></i> My Content</a>
+                            <a href="#" onclick="showCreateContent()"><i class="fas fa-plus"></i> Create</a>
+                            <a href="#" onclick="showPurchases()"><i class="fas fa-shopping-bag"></i> Purchases</a>
+                            <a href="#" onclick="showAnalytics()"><i class="fas fa-chart-bar"></i> Analytics</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Share, Learn, Earn</h1>
+                <p>Global marketplace for STEAM educational content. Create, sell, and discover innovative lesson plans, projects, and learning resources.</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <strong id="totalContent">1,247</strong>
+                        <span>Learning Resources</span>
+                    </div>
+                    <div class="stat">
+                        <strong id="totalCreators">326</strong>
+                        <span>Educators</span>
+                    </div>
+                    <div class="stat">
+                        <strong id="totalDownloads">15,432</strong>
+                        <span>Downloads</span>
+                    </div>
+                    <div class="stat">
+                        <strong>120+</strong>
+                        <span>Countries</span>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <button class="btn primary large" onclick="exploreContent()">
+                        <i class="fas fa-search"></i> Explore Content
+                    </button>
+                    <button class="btn secondary large" onclick="showCreateContent()">
+                        <i class="fas fa-upload"></i> Share Your Content
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories">
+            <div class="container">
+                <h2>Browse by Category</h2>
+                <div class="category-grid" id="categoryGrid">
+                    <!-- Categories will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Trending Content -->
+        <section class="trending">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Trending Content</h2>
+                    <div class="filter-tabs">
+                        <button class="tab active" data-filter="all">All</button>
+                        <button class="tab" data-filter="lesson_plan">Lesson Plans</button>
+                        <button class="tab" data-filter="project">Projects</button>
+                        <button class="tab" data-filter="activity">Activities</button>
+                        <button class="tab" data-filter="assessment">Assessments</button>
+                    </div>
+                </div>
+                <div class="content-grid" id="trendingContent">
+                    <!-- Trending content will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Creators -->
+        <section class="featured-creators">
+            <div class="container">
+                <h2>Featured Educators</h2>
+                <div class="creators-grid" id="featuredCreators">
+                    <!-- Featured creators will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Content Detail Modal -->
+    <div class="modal" id="contentModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3 id="contentTitle">Content Title</h3>
+                <button class="close-btn" onclick="closeModal('contentModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="content-detail-grid">
+                    <div class="content-info">
+                        <div class="content-media">
+                            <img id="contentImage" src="" alt="Content Preview">
+                            <div class="content-badges">
+                                <span class="badge" id="contentType">Lesson Plan</span>
+                                <span class="badge difficulty" id="contentDifficulty">Beginner</span>
+                            </div>
+                        </div>
+                        
+                        <div class="content-metadata">
+                            <div class="rating">
+                                <div class="stars" id="contentRating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span id="ratingText">4.8 (23 reviews)</span>
+                            </div>
+                            
+                            <div class="metadata-grid">
+                                <div class="metadata-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span id="contentDuration">60 minutes</span>
+                                </div>
+                                <div class="metadata-item">
+                                    <i class="fas fa-users"></i>
+                                    <span id="contentAgeGroup">Ages 10-14</span>
+                                </div>
+                                <div class="metadata-item">
+                                    <i class="fas fa-download"></i>
+                                    <span id="downloadCount">156 downloads</span>
+                                </div>
+                                <div class="metadata-item">
+                                    <i class="fas fa-language"></i>
+                                    <span id="contentLanguage">English</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-details">
+                        <div class="content-description">
+                            <h4>Description</h4>
+                            <p id="contentDescription">Content description will be loaded here...</p>
+                        </div>
+                        
+                        <div class="learning-objectives">
+                            <h4>Learning Objectives</h4>
+                            <ul id="learningObjectives">
+                                <!-- Objectives will be loaded dynamically -->
+                            </ul>
+                        </div>
+                        
+                        <div class="requirements">
+                            <h4>Requirements</h4>
+                            <ul id="contentRequirements">
+                                <!-- Requirements will be loaded dynamically -->
+                            </ul>
+                        </div>
+                        
+                        <div class="creator-info">
+                            <h4>Creator</h4>
+                            <div class="creator-card">
+                                <img id="creatorAvatar" src="" alt="Creator">
+                                <div class="creator-details">
+                                    <h5 id="creatorName">Creator Name</h5>
+                                    <p id="creatorBio">Creator bio...</p>
+                                    <div class="creator-stats">
+                                        <span><i class="fas fa-star"></i> <span id="creatorRating">4.9</span></span>
+                                        <span><i class="fas fa-folder"></i> <span id="creatorContentCount">15</span> items</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pricing-section">
+                    <div class="price-info">
+                        <div class="price" id="contentPrice">
+                            <span class="amount">$9.99</span>
+                            <span class="currency">USD</span>
+                            <span class="or">or</span>
+                            <span class="tokens">999 tokens</span>
+                        </div>
+                        <div class="purchase-actions">
+                            <button class="btn primary" id="purchaseBtn" onclick="purchaseContent()">
+                                <i class="fas fa-shopping-cart"></i> Purchase
+                            </button>
+                            <button class="btn secondary" onclick="addToWishlist()">
+                                <i class="fas fa-heart"></i> Wishlist
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Login to STEAM Marketplace</h3>
+                <button class="close-btn" onclick="closeModal('loginModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm" onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label for="loginUsername">Username or Email</label>
+                        <input type="text" id="loginUsername" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <button type="submit" class="btn primary full-width">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </button>
+                </form>
+                <div class="modal-footer">
+                    <p>Don't have an account? <a href="#" onclick="switchToRegister()">Sign up here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Join STEAM Marketplace</h3>
+                <button class="close-btn" onclick="closeModal('registerModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="registerForm" onsubmit="handleRegister(event)">
+                    <div class="form-group">
+                        <label for="registerUsername">Username</label>
+                        <input type="text" id="registerUsername" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">Email</label>
+                        <input type="email" id="registerEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerDisplayName">Display Name</label>
+                        <input type="text" id="registerDisplayName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerProfileType">I am a...</label>
+                        <select id="registerProfileType" required>
+                            <option value="">Select profile type</option>
+                            <option value="teacher">Teacher/Educator</option>
+                            <option value="student">Student</option>
+                            <option value="parent">Parent</option>
+                            <option value="institution">Educational Institution</option>
+                            <option value="content_creator">Content Creator</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerInstitution">Institution (Optional)</label>
+                        <input type="text" id="registerInstitution">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerCountry">Country</label>
+                        <select id="registerCountry" required>
+                            <option value="">Select country</option>
+                            <!-- Countries will be populated dynamically -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Password</label>
+                        <input type="password" id="registerPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerConfirmPassword">Confirm Password</label>
+                        <input type="password" id="registerConfirmPassword" required>
+                    </div>
+                    <button type="submit" class="btn primary full-width">
+                        <i class="fas fa-user-plus"></i> Create Account
+                    </button>
+                </form>
+                <div class="modal-footer">
+                    <p>Already have an account? <a href="#" onclick="switchToLogin()">Login here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Content Modal -->
+    <div class="modal" id="createContentModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Share Your Educational Content</h3>
+                <button class="close-btn" onclick="closeModal('createContentModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="createContentForm" onsubmit="handleCreateContent(event)">
+                    <div class="form-grid">
+                        <div class="form-section">
+                            <h4>Basic Information</h4>
+                            <div class="form-group">
+                                <label for="contentTitle">Title *</label>
+                                <input type="text" id="contentTitle" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contentDescriptionInput">Description *</label>
+                                <textarea id="contentDescriptionInput" rows="4" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="contentTypeSelect">Content Type *</label>
+                                <select id="contentTypeSelect" required>
+                                    <option value="">Select type</option>
+                                    <option value="lesson_plan">Lesson Plan</option>
+                                    <option value="project">Project</option>
+                                    <option value="activity">Activity</option>
+                                    <option value="assessment">Assessment</option>
+                                    <option value="resource">Resource</option>
+                                    <option value="course">Course</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-section">
+                            <h4>Categories & Targeting</h4>
+                            <div class="form-group">
+                                <label for="contentCategories">Categories</label>
+                                <div class="checkbox-group" id="contentCategories">
+                                    <!-- Categories will be populated dynamically -->
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="contentAgeGroups">Age Groups</label>
+                                <div class="checkbox-group" id="contentAgeGroups">
+                                    <!-- Age groups will be populated dynamically -->
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="contentDifficultySelect">Difficulty Level</label>
+                                <select id="contentDifficultySelect">
+                                    <option value="beginner">Beginner</option>
+                                    <option value="intermediate">Intermediate</option>
+                                    <option value="advanced">Advanced</option>
+                                    <option value="expert">Expert</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="contentDurationInput">Duration (minutes)</label>
+                                <input type="number" id="contentDurationInput" min="1" value="60">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h4>Educational Details</h4>
+                        <div class="form-group">
+                            <label for="learningObjectivesInput">Learning Objectives</label>
+                            <textarea id="learningObjectivesInput" rows="3" placeholder="Enter each objective on a new line"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="requirementsInput">Requirements/Prerequisites</label>
+                            <textarea id="requirementsInput" rows="3" placeholder="Enter each requirement on a new line"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="toolsNeededInput">Tools/Materials Needed</label>
+                            <textarea id="toolsNeededInput" rows="3" placeholder="Enter each tool/material on a new line"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h4>Pricing</h4>
+                        <div class="form-group">
+                            <label for="pricingModelSelect">Pricing Model</label>
+                            <select id="pricingModelSelect" onchange="handlePricingModelChange()">
+                                <option value="free">Free</option>
+                                <option value="paid">Paid</option>
+                                <option value="freemium">Freemium (Free + Premium)</option>
+                                <option value="subscription">Subscription</option>
+                            </select>
+                        </div>
+                        <div class="pricing-inputs" id="pricingInputs" style="display: none;">
+                            <div class="form-group">
+                                <label for="priceUsdInput">Price (USD)</label>
+                                <input type="number" id="priceUsdInput" min="0" step="0.01">
+                            </div>
+                            <div class="form-group">
+                                <label for="tokenPriceInput">Token Price</label>
+                                <input type="number" id="tokenPriceInput" min="0">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn secondary" onclick="closeModal('createContentModal')">Cancel</button>
+                        <button type="submit" class="btn primary">
+                            <i class="fas fa-upload"></i> Create Content
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Purchase Token Modal -->
+    <div class="modal" id="purchaseTokenModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Purchase Tokens</h3>
+                <button class="close-btn" onclick="closeModal('purchaseTokenModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="token-packages">
+                    <div class="package" onclick="selectTokenPackage(100, 1.00)">
+                        <div class="package-tokens">100 Tokens</div>
+                        <div class="package-price">$1.00</div>
+                        <div class="package-bonus">Starter Pack</div>
+                    </div>
+                    <div class="package popular" onclick="selectTokenPackage(500, 4.50)">
+                        <div class="package-badge">Popular</div>
+                        <div class="package-tokens">500 Tokens</div>
+                        <div class="package-price">$4.50</div>
+                        <div class="package-bonus">Save 10%</div>
+                    </div>
+                    <div class="package" onclick="selectTokenPackage(1000, 8.00)">
+                        <div class="package-tokens">1000 Tokens</div>
+                        <div class="package-price">$8.00</div>
+                        <div class="package-bonus">Save 20%</div>
+                    </div>
+                    <div class="package" onclick="selectTokenPackage(2500, 18.75)">
+                        <div class="package-tokens">2500 Tokens</div>
+                        <div class="package-price">$18.75</div>
+                        <div class="package-bonus">Save 25%</div>
+                    </div>
+                </div>
+                
+                <div class="purchase-summary" id="purchaseSummary" style="display: none;">
+                    <h4>Purchase Summary</h4>
+                    <div class="summary-row">
+                        <span>Tokens:</span>
+                        <span id="selectedTokens">0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Price:</span>
+                        <span id="selectedPrice">$0.00</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="totalPrice">$0.00</span>
+                    </div>
+                    
+                    <button class="btn primary full-width" onclick="processPurchaseTokens()">
+                        <i class="fas fa-credit-card"></i> Purchase Tokens
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <!-- Notification System -->
+    <div class="notification-container" id="notificationContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

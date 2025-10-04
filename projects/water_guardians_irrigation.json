@@ -1,0 +1,771 @@
+{
+  "project_id": "water_guardians_irrigation",
+  "created_at": "2025-10-04T20:10:00Z",
+  "project_meta": {
+    "title": "Water Guardians: Smart Irrigation System",
+    "grade_band": "Grades 6–8",
+    "duration": "8 lessons × 50 minutes (2 weeks)",
+    "theme": "Smart irrigation for responsible water use",
+    "context": "Kerala backwaters, monsoon variability, local water scarcity pockets",
+    "driving_question": "How might we design a smart irrigation helper that waters only when plants truly need it, saving water at school or home?",
+    "project_type": "interdisciplinary_steam",
+    "difficulty_level": "intermediate",
+    "featured": true
+  },
+  "standards_alignment": {
+    "NGSS": [
+      "MS-ETS1-1: Define criteria and constraints of a design problem.",
+      "MS-ETS1-2: Evaluate competing design solutions via systematic process.",
+      "MS-ETS1-3: Analyze data from tests to determine best characteristics.",
+      "MS-ESS3-3: Apply scientific principles to design a method for monitoring and minimizing human impact.",
+      "Science & Engineering Practices: Planning & Carrying Out Investigations; Analyzing & Interpreting Data",
+      "Crosscutting Concepts: Cause & Effect; Systems & System Models"
+    ],
+    "ISTE": [
+      "1.1 Empowered Learner",
+      "1.3 Knowledge Constructor", 
+      "1.4 Innovative Designer",
+      "1.5 Computational Thinker",
+      "1.6 Creative Communicator",
+      "1.7 Global Collaborator"
+    ],
+    "DIGCOMP": [
+      "1.1 Browsing, searching and filtering data, information and digital content",
+      "2.1 Interacting through digital technologies",
+      "3.1 Developing digital content",
+      "3.2 Integrating and re-elaborating digital content",
+      "4.1 Protecting devices, personal data and privacy",
+      "5.3 Identifying needs and technological responses"
+    ],
+    "OECD": [
+      "Student Agency",
+      "Transformative Competencies: Creating New Value; Reconciling Tensions; Taking Responsibility",
+      "Anticipation–Action–Reflection cycle"
+    ],
+    "UNESCO_MIL": [
+      "Access: locate reliable climate/water data",
+      "Evaluate: verify sources and bias",
+      "Create: produce ethical media artifacts with attribution"
+    ],
+    "NCF_2023": [
+      "Science: Knowing & Doing; Problem Solving; Environmental Education",
+      "Mathematics: Reasoning, Proportional Thinking, Data Handling",
+      "Work Education: Hands-on, community relevance",
+      "Art Integration & Multilingualism",
+      "Foundational Digital Literacy & Citizenship"
+    ],
+    "Digital_Citizenship": [
+      "Privacy & consent in data collection and media capture",
+      "Attribution and licensing of assets",
+      "Healthy, balanced technology use and respectful collaboration"
+    ]
+  },
+  "pbl_framework": {
+    "driving_question": "How might we design a smart irrigation helper that waters only when plants truly need it, saving water at school or home?",
+    "enduring_understandings": [
+      "Sensors allow systems to perceive conditions and automate decisions.",
+      "Thresholds and feedback loops connect measured data to meaningful action.",
+      "Design is iterative: prototypes improve through testing and data.",
+      "Responsible technology use can reduce environmental impact."
+    ],
+    "success_criteria": [
+      "Collects and interprets moisture/temperature data accurately.",
+      "Implements sensor→logic→actuator control that prevents over-watering.",
+      "Explains design choices with evidence from tests.",
+      "Adheres to safety, privacy, and digital citizenship expectations."
+    ],
+    "key_vocabulary": [
+      "Soil moisture threshold",
+      "Calibration",
+      "Feedback loop", 
+      "Duty cycle",
+      "Actuator",
+      "Debouncing",
+      "Hysteresis"
+    ]
+  },
+  "lesson_sequence": [
+    {
+      "lesson_number": 1,
+      "title": "Launch & Needfinding",
+      "duration_minutes": 50,
+      "objectives": [
+        "Frame the water conservation challenge using local context.",
+        "Identify stakeholders, constraints, and success criteria."
+      ],
+      "activities": [
+        {
+          "type": "explore",
+          "description": "Gallery walk of irrigation failures/successes; local water cycle mini-brief.",
+          "duration_minutes": 15,
+          "materials": ["Photos of irrigation systems", "Local water data sheets", "Gallery walk protocol"]
+        },
+        {
+          "type": "mini_lesson",
+          "description": "Systems thinking: sensors→logic→actuators; introduce driving question.",
+          "duration_minutes": 10,
+          "materials": ["Systems diagram template", "Sensor examples", "Actuator examples"]
+        },
+        {
+          "type": "build",
+          "description": "Team charter; define criteria/constraints; set initial threshold hypotheses.",
+          "duration_minutes": 20,
+          "materials": ["Team charter template", "Criteria/constraints worksheet", "Hypothesis recording sheet"]
+        },
+        {
+          "type": "reflect",
+          "description": "Exit ticket: restate problem, constraints, and user needs.",
+          "duration_minutes": 5,
+          "materials": ["Exit ticket template", "Digital reflection form"]
+        }
+      ],
+      "assessment_checkpoints": [
+        "Exit ticket completion",
+        "Team charter quality review",
+        "Constraints identification accuracy"
+      ],
+      "standards_focus": ["MS-ETS1-1", "ISTE 1.4", "OECD Agency"],
+      "differentiation": {
+        "scaffolds": ["Sentence starters for constraints", "Visual examples of irrigation systems"],
+        "extensions": ["Research local water management policies", "Interview community water managers"]
+      }
+    },
+    {
+      "lesson_number": 2,
+      "title": "Sensors 101 & Calibration",
+      "duration_minutes": 50,
+      "objectives": [
+        "Explain what sensors measure and why calibration is necessary.",
+        "Design a simple calibration protocol for moisture sensors."
+      ],
+      "activities": [
+        {
+          "type": "explore",
+          "description": "Hands-on with soil moisture + DHT; compare readings on dry/wet samples.",
+          "duration_minutes": 20,
+          "materials": ["Soil moisture sensors", "DHT11/DHT22 sensors", "Dry/wet soil samples", "Multimeter"]
+        },
+        {
+          "type": "mini_lesson",
+          "description": "Noise, sampling rate, averaging; creating a calibration curve.",
+          "duration_minutes": 10,
+          "materials": ["Calibration curve examples", "Graph paper", "Calculator"]
+        },
+        {
+          "type": "build",
+          "description": "Calibrate sensor (3 points): dry, field-wet, saturated; record CSV.",
+          "duration_minutes": 15,
+          "materials": ["Calibration worksheet", "CSV template", "Various soil moisture levels"]
+        },
+        {
+          "type": "reflect",
+          "description": "Data talk: What threshold would you pick and why?",
+          "duration_minutes": 5,
+          "materials": ["Data analysis worksheet", "Threshold decision matrix"]
+        }
+      ],
+      "assessment_checkpoints": [
+        "Lab sheet with calibration data",
+        "Safety checklist completion",
+        "Threshold justification quality"
+      ],
+      "standards_focus": ["SEP: Analyzing & Interpreting Data", "ISTE 1.5"],
+      "safety_protocols": [
+        "Dry hands while handling electronics",
+        "Proper sensor insertion depth",
+        "Clean sensors between tests"
+      ]
+    },
+    {
+      "lesson_number": 3,
+      "title": "Scratch Simulation",
+      "duration_minutes": 50,
+      "objectives": [
+        "Model irrigation logic in Scratch to test thresholds and hysteresis.",
+        "Use variables, conditionals, and events to simulate moisture changes."
+      ],
+      "activities": [
+        {
+          "type": "explore", 
+          "description": "Demo Scratch sim: slider → 'moisture'; sprite shows pump ON/OFF.",
+          "duration_minutes": 10,
+          "materials": ["Scratch demo project", "Computer/tablet access", "Demo script"]
+        },
+        {
+          "type": "mini_lesson",
+          "description": "Blocks for sensing, variables, control flow; add hysteresis band.",
+          "duration_minutes": 10,
+          "materials": ["Scratch block reference", "Hysteresis concept diagram", "Code snippets"]
+        },
+        {
+          "type": "build",
+          "description": "Teams build sim with ON at <30% and OFF at >40% (editable).",
+          "duration_minutes": 25,
+          "materials": ["Scratch starter template", "Programming checklist", "Debugging guide"]
+        },
+        {
+          "type": "reflect",
+          "description": "Share sim; peer feedback using checklist.",
+          "duration_minutes": 5,
+          "materials": ["Peer feedback form", "Presentation timer", "Sharing protocol"]
+        }
+      ],
+      "assessment_checkpoints": [
+        "Simulation works with hysteresis",
+        "Peer feedback notes quality",
+        "Code documentation completeness"
+      ],
+      "standards_focus": ["ISTE 1.5", "DIGCOMP 3.1"],
+      "coding_resources": {
+        "scratch_blocks": [
+          "when green flag clicked",
+          "set [moisture v] to (slider value 0–100)",
+          "set [pump_state v] to [OFF]",
+          "forever",
+          "if <(moisture) < (30)> then",
+          "set [pump_state v] to [ON]",
+          "else if <(moisture) > (40)> then",
+          "set [pump_state v] to [OFF]"
+        ],
+        "tips": [
+          "Use two thresholds to implement hysteresis",
+          "Display status with costume change",
+          "Add manual override button"
+        ]
+      }
+    },
+    {
+      "lesson_number": 4,
+      "title": "Wiring & Safety",
+      "duration_minutes": 50,
+      "objectives": [
+        "Wire moisture sensor, servo valve, LED/buzzer/OLED respecting polarity and current limits.",
+        "Follow safety protocols for classroom prototyping."
+      ],
+      "activities": [
+        {
+          "type": "explore",
+          "description": "Teacher demo: wiring map; identifying VCC/GND/signal; servo basics.",
+          "duration_minutes": 10,
+          "materials": ["Wiring diagram poster", "Component identification guide", "Servo demo setup"]
+        },
+        {
+          "type": "mini_lesson",
+          "description": "Electrical safety, strain relief, insulation; documentation of circuits.",
+          "duration_minutes": 10,
+          "materials": ["Safety protocol handout", "Circuit documentation template", "Safety equipment"]
+        },
+        {
+          "type": "build",
+          "description": "Teams wire breadboard as per map; LED indicator test.",
+          "duration_minutes": 25,
+          "materials": ["Breadboards", "Jumper wires", "LEDs", "Resistors", "Wiring guide", "Multimeter"]
+        },
+        {
+          "type": "reflect",
+          "description": "Quick safety audit & wiring photo for portfolio.",
+          "duration_minutes": 5,
+          "materials": ["Safety audit checklist", "Camera/phone", "Portfolio template"]
+        }
+      ],
+      "assessment_checkpoints": [
+        "Wiring audit pass",
+        "Portfolio photo with annotations",
+        "Safety protocol adherence"
+      ],
+      "standards_focus": ["Work Education", "Digital Citizenship: Safety"],
+      "safety_requirements": [
+        "Low-voltage only (3.3V/5V)",
+        "No mains electricity",
+        "Dry hands requirement",
+        "Adult supervision for troubleshooting",
+        "Proper strain relief on connections"
+      ]
+    },
+    {
+      "lesson_number": 5,
+      "title": "Python Control Loop",
+      "duration_minutes": 50,
+      "objectives": [
+        "Implement a sensor→logic→actuator loop in Python (MicroPython/PC serial).",
+        "Log readings to CSV for later analysis."
+      ],
+      "activities": [
+        {
+          "type": "explore",
+          "description": "Read starter code; predict outputs; discuss debouncing and sampling.",
+          "duration_minutes": 10,
+          "materials": ["Python starter code", "Code prediction worksheet", "Debouncing examples"]
+        },
+        {
+          "type": "mini_lesson",
+          "description": "Thresholds vs. proportional control; basic hysteresis implementation.",
+          "duration_minutes": 10,
+          "materials": ["Control theory diagrams", "Hysteresis code examples", "Comparison charts"]
+        },
+        {
+          "type": "build",
+          "description": "Run starter; tune thresholds; write CSV with timestamp/value/state.",
+          "duration_minutes": 25,
+          "materials": ["Python IDE/editor", "Microcontroller/computer", "CSV template", "Tuning guidelines"]
+        },
+        {
+          "type": "reflect",
+          "description": "Stand-up: share threshold rationale; note anomalies.",
+          "duration_minutes": 5,
+          "materials": ["Stand-up protocol", "Anomaly logging sheet", "Sharing timer"]
+        }
+      ],
+      "assessment_checkpoints": [
+        "Working control loop",
+        "CSV file with proper format",
+        "Threshold justification documentation"
+      ],
+      "standards_focus": ["MS-ETS1-3", "ISTE 1.5"],
+      "python_starter_code": "# Smart Irrigation Control System\nimport time\nfrom machine import Pin, ADC, PWM\n\n# Configuration\nMOISTURE_PIN = 34\nSERVO_PIN = 13\nLED_PIN = 2\n\n# Thresholds (calibrate based on your sensor)\nON_THRESHOLD = 1600\nOFF_THRESHOLD = 2000\nSAMPLE_INTERVAL = 500\n\n# Initialize hardware\nadc = ADC(Pin(MOISTURE_PIN))\nservo = PWM(Pin(SERVO_PIN), freq=50)\nled = Pin(LED_PIN, Pin.OUT)\n\nstate = 'OFF'\nprint('timestamp,moisture,state')\n\nwhile True:\n    moisture = adc.read()\n    \n    # Hysteresis control\n    if state == 'OFF' and moisture < ON_THRESHOLD:\n        state = 'ON'\n    elif state == 'ON' and moisture > OFF_THRESHOLD:\n        state = 'OFF'\n    \n    # Control actuators\n    if state == 'ON':\n        servo.duty(77)  # Valve open\n        led.value(1)\n    else:\n        servo.duty(26)  # Valve closed\n        led.value(0)\n    \n    # Log data\n    timestamp = time.ticks_ms()\n    print(f'{timestamp},{moisture},{state}')\n    \n    time.sleep_ms(SAMPLE_INTERVAL)"
+    },
+    {
+      "lesson_number": 6,
+      "title": "Testing & Iteration",
+      "duration_minutes": 50,
+      "objectives": [
+        "Plan and conduct fair tests; compare designs using quantitative data.",
+        "Revise design based on evidence."
+      ],
+      "activities": [
+        {
+          "type": "explore",
+          "description": "Design a test matrix: soils, times, moisture start levels.",
+          "duration_minutes": 10,
+          "materials": ["Test matrix template", "Different soil types", "Variable planning worksheet"]
+        },
+        {
+          "type": "mini_lesson",
+          "description": "Reliability, repeatability, and simple statistics (mean/median).",
+          "duration_minutes": 10,
+          "materials": ["Statistics primer", "Calculator", "Data analysis examples"]
+        },
+        {
+          "type": "build",
+          "description": "Run tests; log results; plot quick graphs; iterate thresholds.",
+          "duration_minutes": 25,
+          "materials": ["Test setup materials", "Data logging sheets", "Graphing tools", "Analysis software"]
+        },
+        {
+          "type": "reflect",
+          "description": "Update design journal; commit changes to code.",
+          "duration_minutes": 5,
+          "materials": ["Design journal template", "Version control guide", "Reflection prompts"]
+        }
+      ],
+      "assessment_checkpoints": [
+        "Test matrix completion",
+        "Iteration notes with justification",
+        "Data-driven design changes"
+      ],
+      "standards_focus": ["MS-ETS1-2", "SEP: Planning & Carrying Out Investigations"]
+    },
+    {
+      "lesson_number": 7,
+      "title": "Communication & Ethics",
+      "duration_minutes": 50,
+      "objectives": [
+        "Prepare a bilingual poster/video explaining design, data, and impact.",
+        "Apply media & information literacy and digital citizenship practices."
+      ],
+      "activities": [
+        {
+          "type": "explore",
+          "description": "Analyze sample posters for claim–evidence–reasoning and attribution.",
+          "duration_minutes": 10,
+          "materials": ["Sample poster gallery", "CER analysis worksheet", "Attribution examples"]
+        },
+        {
+          "type": "mini_lesson",
+          "description": "Citations, licensing (CC BY), privacy/consent for photos.",
+          "duration_minutes": 10,
+          "materials": ["Citation guide", "Creative Commons primer", "Privacy consent forms"]
+        },
+        {
+          "type": "build",
+          "description": "Draft poster/video; include model card (intended use, limitations, risks).",
+          "duration_minutes": 25,
+          "materials": ["Poster templates", "Video editing tools", "Model card template", "Design software"]
+        },
+        {
+          "type": "reflect",
+          "description": "Peer review with MIL checklist.",
+          "duration_minutes": 5,
+          "materials": ["MIL checklist", "Peer review protocol", "Feedback forms"]
+        }
+      ],
+      "assessment_checkpoints": [
+        "MIL checklist completion",
+        "Model card section quality",
+        "Proper attribution and citations"
+      ],
+      "standards_focus": ["UNESCO MIL", "ISTE 1.6", "Digital Citizenship"]
+    },
+    {
+      "lesson_number": 8,
+      "title": "Showcase & Reflection",
+      "duration_minutes": 50,
+      "objectives": [
+        "Demonstrate prototype and justify design choices using data.",
+        "Reflect on learning, collaboration, and next steps."
+      ],
+      "activities": [
+        {
+          "type": "explore",
+          "description": "Expo setup; run live demo cycles.",
+          "duration_minutes": 10,
+          "materials": ["Expo setup guide", "Demo station materials", "Timing protocols"]
+        },
+        {
+          "type": "mini_lesson",
+          "description": "Presenting with evidence; handling Q&A.",
+          "duration_minutes": 10,
+          "materials": ["Presentation rubric", "Q&A strategies", "Evidence integration guide"]
+        },
+        {
+          "type": "build",
+          "description": "Team presentations; stakeholder feedback forms.",
+          "duration_minutes": 25,
+          "materials": ["Presentation setup", "Feedback forms", "Stakeholder evaluation sheets", "Timer"]
+        },
+        {
+          "type": "reflect",
+          "description": "Individual reflection (prompted) + peer assessment.",
+          "duration_minutes": 5,
+          "materials": ["Reflection prompts", "Peer assessment forms", "Learning synthesis worksheet"]
+        }
+      ],
+      "assessment_checkpoints": [
+        "Demo day rubric scoring",
+        "Stakeholder feedback quality",
+        "Individual reflection depth"
+      ],
+      "standards_focus": ["MS-ESS3-3", "ISTE 1.6", "OECD Reflection"]
+    }
+  ],
+  "robotics_integration": {
+    "primary_kit": "Luxrobo MODI + ESP32",
+    "required_modules": [
+      {
+        "component": "Soil moisture sensor",
+        "type": "analog/capacitive",
+        "connection": "ADC pin",
+        "purpose": "Primary moisture sensing"
+      },
+      {
+        "component": "DHT11/DHT22",
+        "type": "temperature/humidity sensor",
+        "connection": "digital pin",
+        "purpose": "Environmental monitoring"
+      },
+      {
+        "component": "Servo motor",
+        "type": "SG90 or similar",
+        "connection": "PWM pin",
+        "purpose": "Valve control mechanism"
+      },
+      {
+        "component": "LED indicator",
+        "type": "status LED",
+        "connection": "digital output",
+        "purpose": "Visual status display"
+      },
+      {
+        "component": "OLED display",
+        "type": "I2C 128x64",
+        "connection": "SDA/SCL pins",
+        "purpose": "Live data display"
+      },
+      {
+        "component": "Push button",
+        "type": "momentary switch",
+        "connection": "digital input with pullup",
+        "purpose": "Manual override control"
+      }
+    ],
+    "wiring_specifications": {
+      "power_requirements": "3.3V/5V low voltage only",
+      "safety_notes": [
+        "Use separate power rail for servo if needed",
+        "Common ground for all modules",
+        "Add strain relief to prevent wire damage",
+        "Avoid immersing sensor beyond recommended depth",
+        "Insulate all joints properly"
+      ],
+      "connection_diagram": "moisture_sensor(A0) -> ESP32(GPIO34), DHT22(DATA) -> ESP32(GPIO4), servo(PWM) -> ESP32(GPIO13), LED -> ESP32(GPIO2), OLED(SDA/SCL) -> ESP32(GPIO21/22), button -> ESP32(GPIO14)"
+    }
+  },
+  "coding_components": {
+    "scratch_simulation": {
+      "learning_objectives": [
+        "Model irrigation logic with variables and conditionals",
+        "Implement hysteresis to prevent rapid switching",
+        "Test different threshold values safely"
+      ],
+      "key_blocks": [
+        "when green flag clicked",
+        "set [moisture v] to (slider value)",
+        "forever loop with threshold logic",
+        "if/else statements for pump control",
+        "broadcast messages for status updates"
+      ],
+      "extension_ideas": [
+        "Add weather simulation effects",
+        "Include plant growth visualization",
+        "Create data logging sprite"
+      ]
+    },
+    "python_implementation": {
+      "core_concepts": [
+        "ADC reading and calibration",
+        "PWM servo control",
+        "Hysteresis implementation",
+        "CSV data logging",
+        "Real-time control loops"
+      ],
+      "advanced_features": [
+        "I2C OLED display integration",
+        "Wi-Fi data transmission",
+        "Web dashboard interface",
+        "Proportional control algorithms"
+      ]
+    }
+  },
+  "assessment_framework": {
+    "diagnostic_assessment": {
+      "pre_assessment": "Concept inventory on sensors, feedback systems, and prior coding experience",
+      "materials": ["Digital survey", "Hands-on component identification", "Scratch familiarity check"]
+    },
+    "formative_assessments": [
+      {
+        "checkpoint": "Daily design journals",
+        "frequency": "Each lesson",
+        "format": "Written reflection with sketches"
+      },
+      {
+        "checkpoint": "Lab safety checklist",
+        "frequency": "Hardware lessons",
+        "format": "Peer and teacher verification"
+      },
+      {
+        "checkpoint": "Code review sessions", 
+        "frequency": "Programming lessons",
+        "format": "Pair programming with documentation"
+      },
+      {
+        "checkpoint": "Stand-up presentations",
+        "frequency": "Weekly",
+        "format": "Brief team status updates"
+      }
+    ],
+    "summative_assessment": {
+      "demonstration": "Live prototype demo with data justification",
+      "documentation": "Bilingual poster/video with model card",
+      "reflection": "Individual learning synthesis essay",
+      "peer_evaluation": "Team collaboration assessment"
+    },
+    "rubrics": {
+      "conceptual_understanding": {
+        "excellent": "Explains cause-effect relationships with data evidence; transfers concepts to novel situations; identifies system limitations",
+        "proficient": "Explains relationships with relevant evidence; minor conceptual gaps",
+        "developing": "Partial explanations; limited evidence or some misconceptions",
+        "beginning": "Fragmented understanding; significant misconceptions"
+      },
+      "technical_implementation": {
+        "excellent": "Modular, well-documented code; handles edge cases; includes comprehensive testing",
+        "proficient": "Functional implementation with good structure and basic documentation",
+        "developing": "Works but fragile; limited organization or documentation",
+        "beginning": "Non-functional or copied without understanding"
+      },
+      "collaboration": {
+        "excellent": "Equitable participation; respectful communication; clear documentation of contributions",
+        "proficient": "Generally collaborative with adequate communication and documentation",
+        "developing": "Uneven participation; basic communication and documentation",
+        "beginning": "Minimal collaboration; poor communication"
+      },
+      "digital_citizenship": {
+        "excellent": "Exemplary attention to privacy, attribution, and ethical considerations",
+        "proficient": "Good compliance with minor omissions",
+        "developing": "Some compliance with weak justification",
+        "beginning": "Poor compliance with ethical standards"
+      }
+    }
+  },
+  "differentiation_strategies": {
+    "universal_design_learning": {
+      "representation": [
+        "Visual circuit diagrams and photos",
+        "Bilingual vocabulary cards",
+        "Video tutorials for complex procedures",
+        "Tactile circuit exploration boards"
+      ],
+      "engagement": [
+        "Choice in project context (home vs school garden)",
+        "Flexible grouping strategies",
+        "Multiple entry points for different skill levels",
+        "Real-world connection to local water issues"
+      ],
+      "expression": [
+        "Multiple format options for final presentation",
+        "Scaffolded reflection templates",
+        "Peer collaboration opportunities",
+        "Technology-enhanced communication tools"
+      ]
+    },
+    "scaffolds": [
+      "Sentence starters for technical explanations",
+      "Pre-built code templates with comments",
+      "Step-by-step wiring guides with photos",
+      "Pair programming role cards"
+    ],
+    "extensions": [
+      "Integration of additional sensors (pH, light, temperature)",
+      "Statistical analysis of collected data",
+      "3D printed enclosure design",
+      "Web-based monitoring dashboard",
+      "Integration with weather API data"
+    ]
+  },
+  "resource_requirements": {
+    "technology_needs": {
+      "hardware": [
+        "ESP32/Arduino microcontroller per team",
+        "Sensor kit with moisture, temperature, humidity sensors",
+        "Servo motors and mounting hardware",
+        "Breadboards and jumper wires",
+        "OLED displays",
+        "Computer/tablet access for programming"
+      ],
+      "software": [
+        "Scratch 3.0 or equivalent block programming environment",
+        "Arduino IDE or MicroPython environment",
+        "Spreadsheet software for data analysis",
+        "Basic video editing software"
+      ]
+    },
+    "low_resource_alternatives": [
+      "Paper-based logic simulation with cards",
+      "LED-only status indicator instead of servo",
+      "Manual watering guided by sensor readings",
+      "Virtual sensor data sets for analysis",
+      "Smartphone apps for data collection"
+    ],
+    "material_lists": {
+      "per_team": [
+        "1x ESP32 development board",
+        "1x Soil moisture sensor",
+        "1x DHT22 temperature/humidity sensor",
+        "1x SG90 servo motor",
+        "1x 0.96\" OLED display",
+        "2x LEDs (status indicators)",
+        "1x Push button",
+        "1x Breadboard",
+        "20x Jumper wires",
+        "Resistors (220Ω, 10kΩ)",
+        "USB cable for programming"
+      ],
+      "classroom_shared": [
+        "Multimeter for troubleshooting",
+        "Various soil samples",
+        "Small containers for testing",
+        "Safety equipment",
+        "Reference materials and guides"
+      ]
+    }
+  },
+  "ai_integration": {
+    "appropriate_use_cases": [
+      "Research assistance for local water management practices",
+      "Code explanation and debugging support", 
+      "Data analysis and pattern recognition",
+      "Design critique and improvement suggestions",
+      "Translation support for bilingual materials",
+      "Accessibility enhancement (alt text, captions)"
+    ],
+    "ethical_considerations": [
+      "What failure modes could harm plants or waste water?",
+      "How do we ensure privacy when collecting and sharing data?",
+      "What biases might exist in our sensor data or analysis?",
+      "How do we properly attribute AI-assisted work?",
+      "What are the limitations of our solution?"
+    ],
+    "student_guidelines": [
+      "Always cite AI assistance in your work",
+      "Use AI to explain concepts, not to do the thinking",
+      "Verify AI-generated information with reliable sources",
+      "Consider ethical implications of automated systems",
+      "Document your decision-making process"
+    ]
+  },
+  "evidence_portfolio": {
+    "required_artifacts": [
+      "Team charter and problem definition",
+      "Sensor calibration data and analysis",
+      "Circuit diagram with safety documentation",
+      "Scratch simulation project file",
+      "Commented Python code with version history",
+      "Testing data and iteration log",
+      "Bilingual presentation materials",
+      "Individual reflection essays",
+      "Peer collaboration assessments"
+    ],
+    "portfolio_organization": {
+      "digital_format": "Shared team folder with individual reflection sections",
+      "submission_timeline": "Artifacts submitted after each major milestone",
+      "peer_review": "Cross-team portfolio reviews in lesson 7",
+      "final_compilation": "Complete portfolio due with final presentations"
+    }
+  },
+  "professional_development": {
+    "teacher_preparation": [
+      "Basic electronics and sensor calibration workshop",
+      "Scratch and Python programming refresher",
+      "Project-based learning facilitation strategies",
+      "Assessment rubric calibration session",
+      "Digital citizenship and AI ethics discussion"
+    ],
+    "ongoing_support": [
+      "Weekly reflection and adjustment meetings",
+      "Peer observation and feedback",
+      "Student work analysis sessions",
+      "Technology troubleshooting resources",
+      "Connection to professional learning communities"
+    ]
+  },
+  "quality_assurance": {
+    "alignment_verification": [
+      "Each lesson mapped to specific standards",
+      "Assessment checkpoints align with learning objectives",
+      "Activities support diverse learner needs",
+      "Technology integration enhances rather than replaces learning",
+      "Safety protocols explicitly defined and practiced"
+    ],
+    "implementation_checklist": [
+      "All materials available and tested",
+      "Teacher preparation completed",
+      "Student safety briefing conducted",
+      "Assessment rubrics shared and understood",
+      "Extension and support materials ready",
+      "Community connections established"
+    ]
+  },
+  "version_information": {
+    "current_version": "1.0",
+    "development_history": [
+      "v1.0: Complete 8-lesson sequence with full robotics integration",
+      "v1.1: Enhanced AI integration guidelines (planned)",
+      "v2.0: Advanced sensor integration and data analytics (planned)"
+    ],
+    "customization_notes": [
+      "Easily adaptable to different geographic contexts",
+      "Scalable from basic LED indicators to full automation",
+      "Modular design allows for flexible implementation",
+      "Multiple assessment options for different requirements"
+    ]
+  }
+}
